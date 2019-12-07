@@ -14,7 +14,7 @@ export class PlaceholderInput extends Component<IIconTextInputProps, {}> {
 
 	render(): JSX.Element {
 		return (
-			<Item>
+			<Item data-test="placeholderInput">
 				<Input {...this.props} />
 			</Item>
 		);

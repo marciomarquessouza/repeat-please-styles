@@ -16,7 +16,7 @@ export class FloatLabelInput extends Component<IIconTextInputProps, {}> {
 		const { label, labelStyle }: IIconTextInputProps = this.props;
 
 		return (
-			<Item floatingLabel>
+			<Item floatingLabel data-test="floatLabelInput">
 				<Label style={labelStyle}>{label}</Label>
 				<Input {...this.props} />
 			</Item>

@@ -24,7 +24,7 @@ export class FloatLabelInputIcon extends Component<IIconTextInputProps, {}> {
 		}: IIconTextInputProps = this.props;
 
 		return (
-			<Item floatingLabel>
+			<Item floatingLabel data-test="floatInputComponent">
 				<Label style={labelStyle}>{label}</Label>
 				<Input {...this.props} />
 				<Icon name={icon || 'mail'} style={[{ color, fontSize }, iconStyle]} />

@@ -5,7 +5,7 @@
  "scripts": {
   "start": "react-native start",
   "android": "react-native run-android",
-  "test": "jest",
+  "test": "jest --coverage",
   "storybook": "start-storybook -p 7007",
   "lint": "npx yarn run lint:js && npx yarn run lint:ts",
   "tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
