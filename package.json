@@ -1,0 +1,63 @@
+{
+  "name": "RPStyles",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "test": "jest",
+    "storybook": "start-storybook -p 7007",
+    "lint": "npx yarn run lint:js && npx yarn run lint:ts",
+    "tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
+    "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
+    "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
+    "lint:all": "npx yarn run lint && npx yarn run tslint"
+  },
+  "dependencies": {
+    "native-base": "^2.13.8",
+    "react": "16.8.6",
+    "react-native": "0.60.5",
+    "react-native-vector-icons": "^6.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.0",
+    "@react-native-community/eslint-config": "0.0.5",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react-native": "^5.2.8",
+    "@storybook/react-native-server": "^5.2.8",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-native": "^0.60.14",
+    "@types/react-test-renderer": "^16.9.0",
+    "@types/styled-components": "^4.4.0",
+    "babel-jest": "^24.1.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.1.0",
+    "metro-react-native-babel-preset": "0.54.1",
+    "prettier": "^1.19.1",
+    "react-dom": "16.8.6",
+    "react-test-renderer": "16.8.6",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
