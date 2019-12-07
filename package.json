@@ -4,7 +4,8 @@
  "private": true,
  "scripts": {
   "start": "react-native start",
-  "android": "react-native run-android",
+	"android": "react-native run-android",
+	"ios": "react-native run-ios",
   "test": "jest --coverage",
   "storybook": "start-storybook -p 7007",
   "lint": "npx yarn run lint:js && npx yarn run lint:ts",
