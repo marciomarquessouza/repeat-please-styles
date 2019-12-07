@@ -46,8 +46,8 @@ export interface IIconTextInputProps {
 		| 'SimpleLineIcons'
 		| 'Zocial';
 	keyboardType?: KeyboardTypeOptions;
-	label: string;
-	labelStyle: StyleProp<TextStyle>;
+	label?: string;
+	labelStyle?: StyleProp<TextStyle>;
 	maxLength?: number;
 	onBlur?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
 	onChange?: (event: NativeSyntheticEvent<TextInputChangeEventData>) => void;
