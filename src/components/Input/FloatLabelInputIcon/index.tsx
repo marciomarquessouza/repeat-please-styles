@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Input, Item, Label } from 'native-base';
 import { IIconTextInputProps } from '../interface';
+import { styles } from '../style';
 
 export class FloatLabelInputIcon extends Component<IIconTextInputProps, {}> {
 	public static defaultProps = {
@@ -24,7 +25,11 @@ export class FloatLabelInputIcon extends Component<IIconTextInputProps, {}> {
 		}: IIconTextInputProps = this.props;
 
 		return (
-			<Item floatingLabel data-test="floatInputComponent">
+			<Item
+				floatingLabel
+				data-test="floatInputComponent"
+				style={styles.inputContainer}
+			>
 				<Label style={labelStyle}>{label}</Label>
 				<Input {...this.props} />
 				<Icon name={icon || 'mail'} style={[{ color, fontSize }, iconStyle]} />
