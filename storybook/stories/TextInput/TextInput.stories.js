@@ -11,8 +11,27 @@ import {
 
 storiesOf('Text Input', module)
 	.addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-	.add('Placeholder Input', () => <PlaceholderInput />)
-	.add('Placeholder Input with Icon', () => <PlaceholderInputIcon />)
+	.add('Placeholder Input', () => (
+		<PlaceholderInput
+			keyboardType="email-address"
+			placeholder="Email"
+		/>
+	))
+	.add('Placeholder Input with Icon', () => (
+		<PlaceholderInput
+			placeholder="Email"
+			keyboardType="email-address"
+			icon="mail"
+		/>
+	))
+	.add('Password', () => (
+		<PlaceholderInput
+			icon="lock"
+			keyboardType="visible-password"
+			placeholder="Password"
+			secureTextEntry={true}
+		/>
+	))
 	.add('Float Label Input', () => <FloatLabelInput />)
 	.add('Float Label Input with Icon', () => (
 		<FloatLabelInputIcon onEndEditing={action('Editing End')} />

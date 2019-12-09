@@ -60,6 +60,5 @@ export interface IIconTextInputProps {
 	placeholderTextColor?: string;
 	secureTextEntry?: boolean;
 	selectionColor?: string;
-	style?: StyleProp<TextStyle>;
 	value?: string;
 }

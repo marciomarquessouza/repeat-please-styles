@@ -23,10 +23,7 @@ export class PlaceholderInputIcon extends Component<IIconTextInputProps, {}> {
 		}: IIconTextInputProps = this.props;
 
 		return (
-			<Item
-				data-test="placeholderInputIcon"
-				style={styles.inputContainer}
-			>
+			<Item data-test="placeholderInputIcon" style={styles.inputContainer}>
 				<Input {...this.props} />
 				<Icon name={icon || 'mail'} style={[{ color, fontSize }, iconStyle]} />
 			</Item>

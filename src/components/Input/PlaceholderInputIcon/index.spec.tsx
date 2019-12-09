@@ -4,7 +4,7 @@ import { findByDataTest } from '../../../utils/testUtils';
 import { PlaceholderInputIcon } from './';
 
 const setup = (props = {}): ShallowWrapper => {
-	return shallow(<PlaceholderInputIcon {...props} />)
+	return shallow(<PlaceholderInputIcon {...props} />);
 };
 
 describe('Placeholder Input with Icon - Basic Tests', () => {
@@ -15,12 +15,18 @@ describe('Placeholder Input with Icon - Basic Tests', () => {
 	});
 
 	it('should render the component properly', () => {
-		const placeholderInputIcon = findByDataTest(wrapper, 'placeholderInputIcon');
+		const placeholderInputIcon = findByDataTest(
+			wrapper,
+			'placeholderInputIcon',
+		);
 		expect(placeholderInputIcon).toHaveLength(1);
 	});
 
 	it('should match the snapshot', () => {
-		const placeholderInputIcon = findByDataTest(wrapper, 'placeholderInputIcon');
+		const placeholderInputIcon = findByDataTest(
+			wrapper,
+			'placeholderInputIcon',
+		);
 		expect(placeholderInputIcon).toMatchSnapshot();
 	});
 });

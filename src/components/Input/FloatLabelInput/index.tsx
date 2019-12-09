@@ -20,8 +20,7 @@ export class FloatLabelInput extends Component<IIconTextInputProps, {}> {
 			<Item
 				floatingLabel
 				data-test="floatLabelInput"
-				style={styles.inputContainer}
-			>
+				style={styles.inputContainer}>
 				<Label style={labelStyle}>{label}</Label>
 				<Input {...this.props} />
 			</Item>
