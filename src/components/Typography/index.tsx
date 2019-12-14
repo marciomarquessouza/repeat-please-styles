@@ -4,12 +4,13 @@ import { Text, TextStyle } from 'react-native';
 
 interface IText {
 	children: string;
+	customStyle: TextStyle;
 };
 
-export const Typography = ({ children }: IText): JSX.Element => (
-	<Text style={styles.textStyle}>
+export const Typography = ({ children, customStyle }: IText): JSX.Element => (
+	<Text style={[styles.textStyle, customStyle´]}>
 		{ children }
-	</Text>
+	</Text>´
 );
 
 Typography.defaultProps = {
