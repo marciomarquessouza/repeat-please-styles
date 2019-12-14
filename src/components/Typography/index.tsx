@@ -8,9 +8,9 @@ interface IText {
 };
 
 export const Typography = ({ children, customStyle }: IText): JSX.Element => (
-	<Text style={[styles.textStyle, customStyle´]}>
+	<Text style={[styles.textStyle, customStyle]}>
 		{ children }
-	</Text>´
+	</Text>
 );
 
 Typography.defaultProps = {
