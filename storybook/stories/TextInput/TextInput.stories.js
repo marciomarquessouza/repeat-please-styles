@@ -27,7 +27,6 @@ storiesOf('Text Input', module)
 	.add('Password', () => (
 		<PlaceholderInput
 			icon="lock"
-			keyboardType="visible-password"
 			placeholder="Password"
 			secureTextEntry={true}
 		/>
