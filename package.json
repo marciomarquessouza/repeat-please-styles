@@ -4,8 +4,8 @@
  "private": true,
  "scripts": {
   "start": "react-native start",
-	"android": "react-native run-android",
-	"ios": "react-native run-ios",
+  "android": "react-native run-android",
+  "ios": "react-native run-ios",
   "test": "jest --coverage",
   "storybook": "start-storybook -p 7007",
   "lint": "npx yarn run lint:js && npx yarn run lint:ts",
@@ -57,13 +57,13 @@
   "typescript": "^3.6.3"
  },
  "jest": {
-	"preset": "react-native",
-	"setupFiles": [
-    "./tests/setup.js"
+  "preset": "react-native",
+  "setupFiles": [
+   "./tests/setup.js"
   ],
-	"transformIgnorePatterns": [
-		"/node_modules/(?!native-base)/"
-	],
+  "transformIgnorePatterns": [
+   "/node_modules/(?!native-base)/"
+  ],
   "transform": {
    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
    "\\.(ts|tsx)$": "ts-jest"
