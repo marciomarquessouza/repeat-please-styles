@@ -8,5 +8,5 @@ export const styles = StyleSheet.create({
 	inputStyle: {
 		fontFamily: 'Oswald-Regular',
 		fontSize: 22,
-	}
+	},
 });

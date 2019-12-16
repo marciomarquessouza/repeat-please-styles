@@ -18,7 +18,7 @@ describe('Float Label Input Basic Tests', () => {
 
 describe('Float Input with Icon Tests', () => {
 	it('should render the imput with icon', () => {
-		const wrapper = setup({ icon: 'mail' })
+		const wrapper = setup({ icon: 'mail' });
 		const floatIconInput = findByDataTest(wrapper, 'floatIconInout');
 		expect(floatIconInput).toHaveLength(1);
 		expect(floatIconInput).toMatchSnapshot();

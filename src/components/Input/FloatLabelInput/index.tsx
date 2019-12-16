@@ -22,7 +22,7 @@ export class FloatLabelInput extends Component<IIconTextInputProps, {}> {
 			iconStyle,
 			label,
 			labelStyle,
-		 }: IIconTextInputProps = this.props;
+		}: IIconTextInputProps = this.props;
 
 		return (
 			<Item
@@ -31,13 +31,13 @@ export class FloatLabelInput extends Component<IIconTextInputProps, {}> {
 				style={styles.inputContainer}>
 				<Label style={labelStyle}>{label}</Label>
 				<Input {...this.props} />
-				{icon &&
+				{icon && (
 					<Icon
 						name={icon}
 						data-test="floatIconInout"
 						style={[{ color, fontSize }, iconStyle]}
 					/>
-				}
+				)}
 			</Item>
 		);
 	}

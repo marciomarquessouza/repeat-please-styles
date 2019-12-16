@@ -18,7 +18,7 @@ describe('Placeholder Input - Basic Tests', () => {
 
 describe('Placeholder Input - Tests with icon', () => {
 	it('should render the placeholder input with icon', () => {
-		const wrapper = setup({ icon: 'mail'});
+		const wrapper = setup({ icon: 'mail' });
 		const placeholderInput = findByDataTest(wrapper, 'placeholderInput');
 		expect(placeholderInput).toHaveLength(1);
 		expect(placeholderInput).toMatchSnapshot();
