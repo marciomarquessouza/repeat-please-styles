@@ -8,19 +8,19 @@ const setup = (props = {}): ShallowWrapper => {
 };
 
 describe('Float Label Input Basic Tests', () => {
-	let wrapper: ShallowWrapper;
-
-	beforeEach(() => {
-		wrapper = setup();
-	});
-
 	it('should render the component properly', () => {
+		const wrapper = setup();
 		const floatLabelInput = findByDataTest(wrapper, 'floatLabelInput');
 		expect(floatLabelInput).toHaveLength(1);
-	});
-
-	it('should match to snapshot test', () => {
-		const floatLabelInput = findByDataTest(wrapper, 'floatLabelInput');
 		expect(floatLabelInput).toMatchSnapshot();
+	});
+});
+
+describe('Float Input with Icon Tests', () => {
+	it('should render the imput with icon', () => {
+		const wrapper = setup({ icon: 'mail' })
+		const floatIconInput = findByDataTest(wrapper, 'floatIconInout');
+		expect(floatIconInput).toHaveLength(1);
+		expect(floatIconInput).toMatchSnapshot();
 	});
 });

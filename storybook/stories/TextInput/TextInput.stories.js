@@ -4,9 +4,7 @@ import { action } from '@storybook/addon-actions';
 import CenterView from '../CenterView';
 import {
 	PlaceholderInput,
-	PlaceholderInputIcon,
 	FloatLabelInput,
-	FloatLabelInputIcon,
 } from '../../../src/components/Input';
 
 storiesOf('Text Input', module)
@@ -31,7 +29,14 @@ storiesOf('Text Input', module)
 			secureTextEntry={true}
 		/>
 	))
-	.add('Float Label Input', () => <FloatLabelInput />)
+	.add('Float Label Input', () => (
+		<FloatLabelInput
+			onEndEditing={action('Editing End')}
+		/>
+	))
 	.add('Float Label Input with Icon', () => (
-		<FloatLabelInputIcon onEndEditing={action('Editing End')} />
+		<FloatLabelInput
+			icon="mail"
+			onEndEditing={action('Editing End')}
+		/>
 	));

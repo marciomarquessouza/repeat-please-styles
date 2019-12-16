@@ -8,18 +8,19 @@ const setup = (props = {}): ShallowWrapper => {
 };
 
 describe('Placeholder Input - Basic Tests', () => {
-	let wrapper: ShallowWrapper;
-	beforeEach(() => {
-		wrapper = setup();
-	});
-
 	it('should render the component properly', () => {
+		const wrapper = setup();
 		const placeholderInput = findByDataTest(wrapper, 'placeholderInput');
 		expect(placeholderInput).toHaveLength(1);
+		expect(placeholderInput).toMatchSnapshot();
 	});
+});
 
-	it('should match the snapshot', () => {
+describe('Placeholder Input - Tests with icon', () => {
+	it('should render the placeholder input with icon', () => {
+		const wrapper = setup({ icon: 'mail'});
 		const placeholderInput = findByDataTest(wrapper, 'placeholderInput');
+		expect(placeholderInput).toHaveLength(1);
 		expect(placeholderInput).toMatchSnapshot();
 	});
 });

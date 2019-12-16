@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Float Label Input Basic Tests should match to snapshot test 1`] = `ShallowWrapper {}`;
+exports[`Float Input with Icon Tests should render the imput with icon 1`] = `ShallowWrapper {}`;
+
+exports[`Float Label Input Basic Tests should render the component properly 1`] = `ShallowWrapper {}`;
