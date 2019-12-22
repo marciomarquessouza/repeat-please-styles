@@ -6,4 +6,10 @@ export const styles = StyleSheet.create({
 		fontFamily: font.primary,
 		fontSize: 38,
 	},
+	titleStyle: {
+		fontFamily: font.title,
+	},
+	bodyStyle: {
+		fontFamily: font.primaryLight,
+	}
 });

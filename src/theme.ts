@@ -10,4 +10,5 @@ export const color = {
 export const font = {
 	primary: 'Oswald-Regular',
 	primaryLight: 'Oswald-ExtraLight',
+	title: 'FredokaOne-Regular',
 };
