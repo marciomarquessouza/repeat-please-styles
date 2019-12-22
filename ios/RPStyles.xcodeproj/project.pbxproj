@@ -18,6 +18,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* RPStylesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPStylesTests.m */; };
 		69885B73A979C2AC99938255 /* libPods-RPStyles-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87299F0BCD0FE2F766EFA257 /* libPods-RPStyles-tvOS.a */; };
+		6A18E9FA23A736CA0096A27D /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A18E9F923A736CA0096A27D /* Oswald-ExtraLight.ttf */; };
 		7A75CD8EB4534A60BCFA29FD /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6C782D9A141CF8990F157 /* Oswald-Regular.ttf */; };
 		96853960FF0DC277699BA520 /* libPods-RPStyles-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9B1013D6540B2D3FD11D0A /* libPods-RPStyles-tvOSTests.a */; };
 		E89BD832F67C7C649C879953 /* libPods-RPStyles.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A36CE81F5E1ACF064FFFFE99 /* libPods-RPStyles.a */; };
@@ -75,6 +76,7 @@
 		6099A3DA00B44CE8A0E43130 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		615D59DD94DC4946992A1E3E /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-ExtraLight.ttf"; path = "../assets/fonts/Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
 		66DE1BF552434894B7845F5A /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		6A18E9F923A736CA0096A27D /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Oswald-ExtraLight.ttf"; path = "../assets/fonts/Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
 		6A2A39C7F44348AC81C586A3 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		6AEB4803305841BA9B72DAAC /* Oswald-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Regular.ttf"; path = "../assets/fonts/static/Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		6C88D93F8BF04F8B910C41FB /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-ExtraLight.ttf"; path = "../assets/fonts/static/Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				6A18E9F923A736CA0096A27D /* Oswald-ExtraLight.ttf */,
 				13B07FAE1A68108700A75B9A /* RPStyles */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RPStylesTests */,
@@ -482,6 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A18E9FA23A736CA0096A27D /* Oswald-ExtraLight.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				7A75CD8EB4534A60BCFA29FD /* Oswald-Regular.ttf in Resources */,

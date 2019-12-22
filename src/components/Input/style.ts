@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { font } from '../../theme';
 
 export const styles = StyleSheet.create({
 	inputContainer: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
 	},
 
 	inputStyle: {
-		fontFamily: 'Oswald-Regular',
+		fontFamily: font.primary,
 		fontSize: 22,
 	},
 });
