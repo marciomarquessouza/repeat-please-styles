@@ -9,7 +9,9 @@ const defaultProps = {
 };
 
 const setup = (props: IBtutton): ShallowWrapper => {
-	return shallow(<ButtonTransparent {...props}>{props.children}</ButtonTransparent>);
+	return shallow(
+		<ButtonTransparent {...props}>{props.children}</ButtonTransparent>,
+	);
 };
 
 describe('Transparent Button Tests', () => {

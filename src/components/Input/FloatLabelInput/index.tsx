@@ -30,7 +30,7 @@ export class FloatLabelInput extends Component<IIconTextInputProps, {}> {
 				data-test="floatLabelInput"
 				style={styles.inputContainer}>
 				<Label style={labelStyle}>{label}</Label>
-				<Input {...this.props} />
+				<Input {...this.props} style={styles.inputStyle} />
 				{icon && (
 					<Icon
 						name={icon}

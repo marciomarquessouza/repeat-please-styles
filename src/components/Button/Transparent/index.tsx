@@ -9,20 +9,13 @@ export class ButtonTransparent extends Component<IBtutton, {}> {
 	};
 
 	render() {
-		const {
-			children,
-			customStyle,
-			onPress,
-			textStyle,
-		}: IBtutton = this.props;
+		const { children, customStyle, onPress, textStyle }: IBtutton = this.props;
 		return (
 			<TouchableOpacity
 				style={[style.ButtonStyle, customStyle]}
 				onPress={onPress}
 				data-test="buttonTransparente">
-				<Text style={[style.TextStyle, textStyle]}>
-					{children}
-				</Text>
+				<Text style={[style.TextStyle, textStyle]}>{children}</Text>
 			</TouchableOpacity>
 		);
 	}

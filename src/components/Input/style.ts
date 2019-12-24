@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { font } from '../../theme';
+import { color, font } from '../../theme';
 
 export const styles = StyleSheet.create({
 	inputContainer: {
@@ -9,5 +9,10 @@ export const styles = StyleSheet.create({
 	inputStyle: {
 		fontFamily: font.primary,
 		fontSize: 22,
+		borderWidth: 1,
+		borderRightColor: color.transparent,
+		borderLeftColor: color.transparent,
+		borderTopColor: color.transparent,
+		borderBottomColor: color.black,
 	},
 });

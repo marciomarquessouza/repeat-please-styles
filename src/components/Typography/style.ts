@@ -11,5 +11,5 @@ export const styles = StyleSheet.create({
 	},
 	bodyStyle: {
 		fontFamily: font.primaryLight,
-	}
+	},
 });

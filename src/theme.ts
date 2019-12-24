@@ -4,7 +4,9 @@ export const color = {
 	warning: '#FF0000',
 	white: '#FFF',
 	black: '#000',
-	transparent: 'rgba(101, 101, 101, 0.3)',
+	glass: 'rgba(101, 101, 101, 0.3)',
+	background: '#EBD935',
+	transparent: 'transparent',
 };
 
 export const font = {
