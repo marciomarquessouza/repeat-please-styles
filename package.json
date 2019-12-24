@@ -1,7 +1,8 @@
 {
- "name": "RPStyles",
+ "name": "repeat-please-styles",
  "version": "0.0.1",
  "private": true,
+ "main": "./module.ts",
  "scripts": {
   "start": "react-native start",
   "android": "react-native run-android",
@@ -14,14 +15,19 @@
   "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
   "lint:all": "npx yarn run lint && npx yarn run tslint"
  },
- "dependencies": {
+ "peerDependencies": {
+    "react": ">= 16.8.6",
+	"react-native": ">= 0.60.5",
+	"native-base": ">= 2.13.8",
+	"react-native-svg": ">= 9.13.6",
+  	"react-native-vector-icons": ">= 6.6.0"
+ },
+ "devDependencies": {
   "native-base": "^2.13.8",
   "react": "16.8.6",
   "react-native": "0.60.5",
   "react-native-svg": "^9.13.6",
-  "react-native-vector-icons": "^6.6.0"
- },
- "devDependencies": {
+  "react-native-vector-icons": "^6.6.0",
   "@babel/core": "^7.5.0",
   "@babel/runtime": "^7.5.0",
   "@react-native-community/eslint-config": "0.0.5",
@@ -75,9 +81,12 @@
    }
   },
   "moduleFileExtensions": [
-   "ts",
-   "tsx",
-   "js"
+	"ts",
+	"tsx",
+	"js",
+	"jsx",
+	"json",
+	"node"
   ],
   "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
  }
