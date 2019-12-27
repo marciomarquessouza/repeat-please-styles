@@ -7,13 +7,13 @@ export const style = StyleSheet.create({
 		backgroundColor: color.primary,
 	},
 	TextContnainer: {
-		flexDirection: 'row',
-		alignItems: 'center',
+		flex: 1,
 		justifyContent: 'center',
+		alignItems: 'center',
 	},
 	TextStyle: {
 		fontFamily: font.primaryLight,
-		fontSize: 24,
+		fontSize: 22,
 		color: color.white,
 	},
 	SpinnerStyle: {
