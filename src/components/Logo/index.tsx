@@ -5,7 +5,7 @@ import { LogoTitle } from '../../../assets/images/LogoTitle';
 import { SvgProps } from 'react-native-svg';
 
 export interface ILogo {
-	customStyle: ImageStyle;
+	customStyle?: ImageStyle;
 }
 
 const styles = StyleSheet.create({
