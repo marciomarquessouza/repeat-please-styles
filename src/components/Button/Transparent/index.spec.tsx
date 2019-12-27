@@ -4,8 +4,8 @@ import { ButtonTransparent } from './index';
 import { findByDataTest } from '../../../utils/testUtils';
 import { IBtutton } from '../interface';
 
-const defaultProps = {
-	children: 'default',
+const defaultProps: IBtutton = {
+	children: 'Defaul',
 };
 
 const setup = (props: IBtutton): ShallowWrapper => {
@@ -14,10 +14,11 @@ const setup = (props: IBtutton): ShallowWrapper => {
 	);
 };
 
-describe('Transparent Button Tests', () => {
-	it('should render the transparent button properlu', () => {
+describe('Button Transparent Default Tests', () => {
+	it('should render the button components properly', () => {
 		const wrapper = setup(defaultProps);
-		const buttonTransparent = findByDataTest(wrapper, 'buttonTransparente');
+		const buttonTransparent = findByDataTest(wrapper, 'buttonTransparent');
 		expect(buttonTransparent).toHaveLength(1);
+		expect(buttonTransparent).toMatchSnapshot();
 	});
 });

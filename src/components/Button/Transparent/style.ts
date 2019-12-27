@@ -1,17 +1,17 @@
 import { StyleSheet } from 'react-native';
 import { font, color } from '../../../theme';
 
-export const style = StyleSheet.create({
+export const styles = StyleSheet.create({
 	ButtonStyle: {
 		width: '100%',
-		height: 40,
+		alignItems: 'center',
 		backgroundColor: color.glass,
-		borderRadius: 5,
+		padding: 10,
+		borderRadius: 10,
 	},
 	TextStyle: {
-		fontFamily: font.primary,
-		fontSize: 24,
+		fontFamily: font.primaryLight,
+		fontSize: 22,
 		color: color.white,
-		paddingHorizontal: 10,
 	},
 });

@@ -15,8 +15,11 @@ const styles = StyleSheet.create({
 	},
 });
 
-export const Logo = ({ customStyle }: ILogo):JSX.Element => (
-	<Image source={require('../../../assets/images/RPMonkeyHead.png')} style={[styles.imageStyle, customStyle]} />
+export const Logo = ({ customStyle }: ILogo): JSX.Element => (
+	<Image
+		source={require('../../../assets/images/RPMonkeyHead.png')}
+		style={[styles.imageStyle, customStyle]}
+	/>
 );
 
 export const TitleLogo = (props: SvgProps): JSX.Element => (

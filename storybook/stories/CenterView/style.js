@@ -6,5 +6,6 @@ export default {
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: color.background,
+		paddingHorizontal: 10,
 	},
 };

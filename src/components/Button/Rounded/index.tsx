@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { TouchableOpacity, Text } from 'react-native';
 import { IBtutton } from '../interface';
 import { styles } from './style';
+import { TouchableOpacity, Text } from 'react-native';
 
-export class ButtonPrimary extends Component<IBtutton, {}> {
+export class ButtonRounded extends Component<IBtutton, {}> {
 	render() {
-		const { children, customStyle, onPress, textStyle }: IBtutton = this.props;
+		const { children, customStyle, textStyle, onPress }: IBtutton = this.props;
 		return (
 			<TouchableOpacity
 				onPress={onPress}
 				style={[styles.ButtonStyle, customStyle]}
-				data-test="buttonPrimary">
+				data-test="buttonRounded">
 				<Text style={[styles.TextStyle, textStyle]}>{children}</Text>
 			</TouchableOpacity>
 		);

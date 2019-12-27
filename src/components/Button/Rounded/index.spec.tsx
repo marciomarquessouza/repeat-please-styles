@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { ButtonPrimary } from './index';
+import { ButtonRounded } from './index';
 import { findByDataTest } from '../../../utils/testUtils';
 import { IBtutton } from '../interface';
 
@@ -9,14 +9,14 @@ const defaultProps: IBtutton = {
 };
 
 const setup = (props: IBtutton): ShallowWrapper => {
-	return shallow(<ButtonPrimary {...props}>{props.children}</ButtonPrimary>);
+	return shallow(<ButtonRounded {...props}>{props.children}</ButtonRounded>);
 };
 
 describe('Button Primary Default Tests', () => {
 	it('should render the button components properly', () => {
 		const wrapper = setup(defaultProps);
-		const buttonPrimary = findByDataTest(wrapper, 'buttonPrimary');
-		expect(buttonPrimary).toHaveLength(1);
-		expect(buttonPrimary).toMatchSnapshot();
+		const buttonRounded = findByDataTest(wrapper, 'buttonRounded');
+		expect(buttonRounded).toHaveLength(1);
+		expect(buttonRounded).toMatchSnapshot();
 	});
 });

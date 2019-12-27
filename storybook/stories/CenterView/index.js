@@ -6,7 +6,7 @@ import style from './style';
 export default function CenterView({ children }) {
 	return (
 		<KeyboardAvoidingView style={style.main} behavior="padding" enabled>
-			<View>{children}</View>
+			{children}
 		</KeyboardAvoidingView>
 	);
 }
