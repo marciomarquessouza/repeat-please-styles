@@ -1,7 +1,7 @@
 export const color = {
 	primary: '#FF5733',
 	secondary: '#571845',
-	warning: '#FF0000',
+	warning: '#FD8469',
 	white: '#FFF',
 	black: '#000',
 	glass: 'rgba(101, 101, 101, 0.3)',
