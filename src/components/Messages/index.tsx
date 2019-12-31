@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-	Text,
-	TextStyle,
-	Image,
-	ImageStyle,
-	View,
-	ViewStyle,
-} from 'react-native';
+import { Text, TextStyle, ImageStyle, View, ViewStyle } from 'react-native';
+import { WarningIcon } from '../../../assets/images/WarningIcon';
 import { styles } from './styles';
 
 export interface IMessageProps {
@@ -26,10 +20,7 @@ export const MessageWarning = ({
 		<View
 			style={[styles.container, styles.warningStyle, customStyle]}
 			data-test="warning-message">
-			<Image
-				source={require('../../../assets/images/warning-icon.png')}
-				style={[styles.imageStyle, customImageStyle]}
-			/>
+			<WarningIcon style={[styles.imageStyle, customImageStyle]} />
 			<Text style={[styles.textStyle, customTextStyle]}>{children}</Text>
 		</View>
 	);

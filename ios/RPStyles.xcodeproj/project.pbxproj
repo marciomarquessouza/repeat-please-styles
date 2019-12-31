@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RPStylesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPStylesTests.m */; };
 		0A4315760A46F5D7289CE2CF /* libPods-RPStylesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FA0101A3CDDA6EB4C78FBE /* libPods-RPStylesTests.a */; };
@@ -16,12 +17,12 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* RPStylesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPStylesTests.m */; };
+		63C7F691DF304968BAB4A92F /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F512847AF0843919AE1CDAE /* FredokaOne-Regular.ttf */; };
 		69885B73A979C2AC99938255 /* libPods-RPStyles-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87299F0BCD0FE2F766EFA257 /* libPods-RPStyles-tvOS.a */; };
 		6A18E9FA23A736CA0096A27D /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A18E9F923A736CA0096A27D /* Oswald-ExtraLight.ttf */; };
 		7A75CD8EB4534A60BCFA29FD /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AE6C782D9A141CF8990F157 /* Oswald-Regular.ttf */; };
 		96853960FF0DC277699BA520 /* libPods-RPStyles-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9B1013D6540B2D3FD11D0A /* libPods-RPStyles-tvOSTests.a */; };
 		E89BD832F67C7C649C879953 /* libPods-RPStyles.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A36CE81F5E1ACF064FFFFE99 /* libPods-RPStyles.a */; };
-		63C7F691DF304968BAB4A92F /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F512847AF0843919AE1CDAE /* FredokaOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		99FA0101A3CDDA6EB4C78FBE /* libPods-RPStylesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPStylesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE6C782D9A141CF8990F157 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Regular.ttf"; path = "../assets/fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		9E6293CD4F3546F5A4DFDA22 /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = ../assets/fonts/Roboto_medium.ttf; sourceTree = "<group>"; };
+		9F512847AF0843919AE1CDAE /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "FredokaOne-Regular.ttf"; path = "../assets/fonts/FredokaOne-Regular.ttf"; sourceTree = "<group>"; };
 		A094278E03A94829AD99DA9E /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = ../assets/fonts/Feather.ttf; sourceTree = "<group>"; };
 		A1D6FB95CF18E8DE41F3F330 /* Pods-RPStylesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPStylesTests.debug.xcconfig"; path = "Target Support Files/Pods-RPStylesTests/Pods-RPStylesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A36CE81F5E1ACF064FFFFE99 /* libPods-RPStyles.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPStyles.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +140,6 @@
 		FC899F9A8A274134BE57FBE1 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Bold.ttf"; path = "../assets/fonts/Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		FFD1ECCE5EE3413A9EBA26EB /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = ../assets/fonts/Ionicons.ttf; sourceTree = "<group>"; };
 		FFFA29FCD2A647A199B2E955 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		9F512847AF0843919AE1CDAE /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; name = "FredokaOne-Regular.ttf"; path = "../assets/fonts/FredokaOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,7 +526,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
 			isa = PBXShellScriptBuildPhase;
