@@ -6,4 +6,5 @@ export interface IBtutton {
 	textStyle?: StyleProp<TextStyle>;
 	onPress?: () => void;
 	rounded?: boolean;
+	isLoading?: boolean;
 }
