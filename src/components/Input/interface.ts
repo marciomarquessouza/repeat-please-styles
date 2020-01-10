@@ -57,6 +57,7 @@ export interface IIconTextInputProps {
 	) => void;
 	onLayout?: (event: LayoutChangeEvent) => void;
 	onKeyPress?: () => void;
+	onSubmitEditing?: () => void;
 	placeholder?: string;
 	placeholderTextColor?: string;
 	secureTextEntry?: boolean;
