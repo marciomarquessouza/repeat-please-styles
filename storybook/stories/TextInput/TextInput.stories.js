@@ -13,6 +13,7 @@ storiesOf('Text Input', module)
 		<PlaceholderInput
 			keyboardType="email-address"
 			placeholder="Email"
+			onKeyPress={action('teste')}
 		/>
 	))
 	.add('Placeholder Input with Icon', () => (

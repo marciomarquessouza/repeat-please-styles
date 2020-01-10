@@ -56,6 +56,7 @@ export interface IIconTextInputProps {
 		e: NativeSyntheticEvent<TextInputEndEditingEventData>,
 	) => void;
 	onLayout?: (event: LayoutChangeEvent) => void;
+	onKeyPress?: () => void;
 	placeholder?: string;
 	placeholderTextColor?: string;
 	secureTextEntry?: boolean;
