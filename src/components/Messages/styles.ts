@@ -9,6 +9,9 @@ export const styles = StyleSheet.create({
 	warningStyle: {
 		backgroundColor: color.warning,
 	},
+	successStyle: {
+		backgroundColor: color.success,
+	},
 	textStyle: {
 		fontFamily: font.primary,
 		fontSize: 24,
