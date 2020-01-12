@@ -2,7 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import CenterView from '../CenterView';
-import { ButtonPrimary, ButtonTransparent, ButtonRounded } from '../../../src/components';
+import {
+	ButtonPrimary,
+	ButtonTransparent,
+	ButtonRounded,
+	LinkButton
+} from '../../../src/components';
 
 storiesOf('Buttons', module)
 .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
@@ -32,4 +37,7 @@ storiesOf('Buttons', module)
 		isLoading={true}>
 			Transparent
 	</ButtonTransparent>
+))
+.add('Link Button', () => (
+	<LinkButton onPress={() => action('Button Pressed')}>Link Button</LinkButton>
 ))
