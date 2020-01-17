@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
 		borderRadius: 10,
 	},
 	TextStyle: {
-		fontFamily: font.primaryLight,
 		fontSize: 22,
 		color: color.white,
+		fontWeight: '200',
 	},
 });

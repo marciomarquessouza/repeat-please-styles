@@ -13,12 +13,13 @@ export const styles = StyleSheet.create({
 		backgroundColor: color.success,
 	},
 	textStyle: {
-		fontFamily: font.primary,
-		fontSize: 24,
+		fontSize: 22,
+		fontWeight: 'bold',
 		color: color.white,
 		width: '100%',
 		flex: 1,
 		flexShrink: 1,
+		paddingTop: 6,
 	},
 	imageStyle: {
 		width: 45,

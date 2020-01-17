@@ -7,7 +7,6 @@ export const styles = StyleSheet.create({
 	},
 
 	inputStyle: {
-		fontFamily: font.primary,
 		fontSize: 22,
 		borderWidth: 1,
 		borderRightColor: color.transparent,
