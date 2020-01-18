@@ -14,7 +14,7 @@ export class ButtonPrimary extends Component<IBtutton, {}> {
 		}: IBtutton = this.props;
 
 		const content = isLoading ? (
-			<ActivityIndicator size="large" color="#fff" />
+			<ActivityIndicator size="large" color="#fff" data-test="loading" />
 		) : (
 			<Text style={[styles.TextStyle, textStyle]}>{children}</Text>
 		);

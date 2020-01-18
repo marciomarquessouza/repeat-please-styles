@@ -19,4 +19,11 @@ describe('Button Primary Default Tests', () => {
 		expect(buttonPrimary).toHaveLength(1);
 		expect(buttonPrimary).toMatchSnapshot();
 	});
+
+	it('should render the loading properly', () => {
+		const wrapper = setup({ ...defaultProps, isLoading: true });
+		const loading = findByDataTest(wrapper, 'loading');
+		expect(loading).toHaveLength(1);
+		expect(loading).toMatchSnapshot();
+	});
 });
