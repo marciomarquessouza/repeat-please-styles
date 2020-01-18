@@ -3,12 +3,13 @@ import { font } from '../../theme';
 
 export const styles = StyleSheet.create({
 	textStyle: {
+		fontFamily: font.primary,
 		fontSize: 38,
 	},
 	titleStyle: {
-		fontWeight: 'bold',
+		fontFamily: font.title,
 	},
 	bodyStyle: {
-		fontWeight: '200',
+		fontFamily: font.primaryLight,
 	},
 });
