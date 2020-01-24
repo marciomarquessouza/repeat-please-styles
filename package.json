@@ -17,18 +17,13 @@
   "lint:all": "npx yarn run lint && npx yarn run tslint"
  },
  "peerDependencies": {
-    "react": ">= 16.8.6",
-	"react-native": ">= 0.60.5",
-	"native-base": ">= 2.13.8",
-	"react-native-svg": ">= 9.13.6",
-  	"react-native-vector-icons": ">= 6.6.0"
+  "native-base": ">= 2.13.8",
+  "react": ">= 16.8.6",
+  "react-native": ">= 0.60.5",
+  "react-native-svg": ">= 9.13.6",
+  "react-native-vector-icons": ">= 6.6.0"
  },
  "devDependencies": {
-  "native-base": "^2.13.8",
-  "react": "16.8.6",
-  "react-native": "0.60.5",
-  "react-native-svg": "^9.13.6",
-  "react-native-vector-icons": "^6.6.0",
   "@babel/core": "^7.5.0",
   "@babel/runtime": "^7.5.0",
   "@react-native-community/eslint-config": "0.0.5",
@@ -54,9 +49,15 @@
   "eslint-plugin-prettier": "^3.1.1",
   "jest": "^24.1.0",
   "metro-react-native-babel-preset": "0.54.1",
+  "native-base": "^2.13.8",
   "prettier": "^1.19.1",
+  "react": "16.8.6",
   "react-dom": "16.8.6",
+  "react-native": "0.60.5",
+  "react-native-svg": "^9.13.6",
+  "react-native-vector-icons": "^6.6.0",
   "react-test-renderer": "16.8.6",
+  "styled-components": "^5.0.0",
   "ts-jest": "^24.2.0",
   "tslint": "^5.20.1",
   "tslint-config-prettier": "^1.18.0",
@@ -82,13 +83,14 @@
    }
   },
   "moduleFileExtensions": [
-	"ts",
-	"tsx",
-	"js",
-	"jsx",
-	"json",
-	"node"
+   "ts",
+   "tsx",
+   "js",
+   "jsx",
+   "json",
+   "node"
   ],
   "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
- }
+ },
+ "dependencies": {}
 }
