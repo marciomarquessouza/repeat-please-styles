@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RPStylesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPStylesTests.m */; };
 		0A4315760A46F5D7289CE2CF /* libPods-RPStylesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FA0101A3CDDA6EB4C78FBE /* libPods-RPStylesTests.a */; };

@@ -1,37 +1,80 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
-import styled from 'styled-components/native'
+import { View, Text } from 'react-native';
+import Animated, { Easing } from 'react-native-reanimated';
+import { CircularChart } from './components'
 
-export interface ICircularProgressProps {
-	radius: number;
+const {
+	call,
+	Clock,
+	Value,
+	set,
+	cond,
+	startClock,
+	clockRunning,
+	timing,
+	debug,
+	stopClock,
+	block,
+	concat,
+} = Animated;
+
+interface ICircularProgressProps {
+	goal: number;
 }
 
-const Container = styled.View`
-	flex: 1;
-	justify-content: center;
-	align-items: center;
-`;
+interface ICircularProgressState {
+	finished: Animated.Value<number>;
+	time: Animated.Value<number>;
+	position: Animated.Value<number>;
+	frameTime: Animated.Value<number>;
+	hasFinished: boolean;
+}
 
-const SemiCircle = styled.View`
-	width: 100px;
-	height: 100px;
-	border-radius: 25px;
-	border-width: 20px;
-	border-top-color: red;
-	border-right-color: red;
-	border-bottom-color: transparent;
-	border-left-color: transparent;
-	transform: rotateZ(-45deg);
-`;
+export default class ProgressBar extends Component<ICircularProgressProps, ICircularProgressState> {
+	constructor(props: ICircularProgressProps) {
+		super(props);
+		this.state = {
+			finished: new Value(0),
+			time: new Value(0),
+			position: new Value(0),
+			frameTime: new Value(0),
+			hasFinished: false,
+		};
+	}
 
-export class CircularProgress extends Component <ICircularProgressProps, {}> {
+	runTiming = (clock: Animated.Clock, value: Animated.Value<number>, dest: Animated.Value<number>) => {
+		const config = {
+			duration: 2000,
+			toValue: dest,
+			easing: Easing.linear,
+		};
+
+		return block([
+			cond(clockRunning(clock), 0, [
+				set(this.state.finished, 0),
+				set(this.state.time, 0),
+				set(this.state.frameTime, 0),
+				set(config.toValue, dest),
+				startClock(clock),
+			]),
+			timing(clock, this.state, config),
+			cond(this.state.finished, [stopClock(clock), call([this.state.finished], () => {this.setState({ hasFinished: true })})]),
+			this.state.position,
+		]);
+	};
+
 	render() {
-		const { radius } = this.props;
+		const clock = new Clock();
+		const progress = new Value(0);
+		const goal = new Value(this.props.goal);
+
 		return (
-			<Container>
-				<Text>Circle Here</Text>
-				<SemiCircle />
-			</Container>
+			<View>
+				<CircularChart
+					progress={this.runTiming(clock, progress, goal)}
+					hasFinished={this.state.hasFinished}
+				/>
+			</View>
 		);
 	}
 }
