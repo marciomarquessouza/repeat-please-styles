@@ -8,6 +8,7 @@ export const color = {
 	glass: 'rgba(101, 101, 101, 0.3)',
 	background: '#EBD935',
 	transparent: 'transparent',
+	lightText: '#656565',
 };
 
 export const font = {

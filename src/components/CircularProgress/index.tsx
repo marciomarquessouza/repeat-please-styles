@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
-import { CircularChart } from './components'
+import { CircularChart, TextChart } from './components'
+import { styles } from './styles';
 
 const {
 	call,
@@ -12,14 +13,13 @@ const {
 	startClock,
 	clockRunning,
 	timing,
-	debug,
 	stopClock,
 	block,
-	concat,
 } = Animated;
 
 interface ICircularProgressProps {
 	goal: number;
+	duration: number;
 }
 
 interface ICircularProgressState {
@@ -30,7 +30,7 @@ interface ICircularProgressState {
 	hasFinished: boolean;
 }
 
-export default class ProgressBar extends Component<ICircularProgressProps, ICircularProgressState> {
+export class CircularProgressBar extends Component<ICircularProgressProps, ICircularProgressState> {
 	constructor(props: ICircularProgressProps) {
 		super(props);
 		this.state = {
@@ -42,9 +42,13 @@ export default class ProgressBar extends Component<ICircularProgressProps, ICirc
 		};
 	}
 
-	runTiming = (clock: Animated.Clock, value: Animated.Value<number>, dest: Animated.Value<number>) => {
+	runTiming = (
+		clock: Animated.Clock,
+		dest: Animated.Value<number>,
+		duration: number,
+	) => {
 		const config = {
-			duration: 2000,
+			duration,
 			toValue: dest,
 			easing: Easing.linear,
 		};
@@ -58,22 +62,38 @@ export default class ProgressBar extends Component<ICircularProgressProps, ICirc
 				startClock(clock),
 			]),
 			timing(clock, this.state, config),
-			cond(this.state.finished, [stopClock(clock), call([this.state.finished], () => {this.setState({ hasFinished: true })})]),
+			cond(
+				this.state.finished,
+				[
+					stopClock(clock),
+					call([this.state.finished],
+						() => {this.setState({ hasFinished: true })}
+					)
+				]
+			),
 			this.state.position,
 		]);
 	};
 
 	render() {
 		const clock = new Clock();
-		const progress = new Value(0);
-		const goal = new Value(this.props.goal);
+		const { duration, goal } = this.props;
+		const goalChart = new Value(this.props.goal);
 
 		return (
-			<View>
-				<CircularChart
-					progress={this.runTiming(clock, progress, goal)}
-					hasFinished={this.state.hasFinished}
-				/>
+			<View style={styles.container}>
+				<View style={styles.chartContainer}>
+					<CircularChart
+						progress={this.runTiming(clock, goalChart, duration)}
+						hasFinished={this.state.hasFinished}
+					/>
+				</View>
+				<View style={styles.textChartContainer}>
+					<TextChart
+						progress={goal}
+						duration={duration}
+					/>
+				</View>
 			</View>
 		);
 	}

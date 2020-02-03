@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, View } from 'react-native';
 import Svg, { Defs, LinearGradient, Path, Stop, Text } from 'react-native-svg';
 import Animated from 'react-native-reanimated';
 
@@ -51,33 +51,27 @@ export const CircularChart = ({
 	const strokeDashoffset = multiply(alpha, radius);
 
 	return (
-		<Svg width={size} height={size}>
-			<Defs>
-				<LinearGradient id="gradient" x1="0" x2="100%" y1="0" y2="0">
-					<Stop offset="0" stopColor={firstColor} />
-					<Stop offset="1" stopColor={secondColor} />
-				</LinearGradient>
-			</Defs>
-			<Path
-				fill="none"
-				stroke="url(#gradient)"
-				strokeDasharray={`${circumference}, ${circumference}`}
-				{...{d, strokeWidth}}
-			/>
-			<AnimatedPath
-				fill="none"
-				stroke={staticColor || "#F2F2F2"}
-				strokeDasharray={`${circumference}, ${circumference}`}
-				{...{ d, strokeDashoffset, strokeWidth }}
-			/>
-			{hasFinished 
-			? <Text 
-				x="35%"
-				y="50%"
-				fontSize="40"
-				fontWeight="bold">
-					80%
-				</Text> : null }
-		</Svg>
+		<View>
+			<Svg width={size} height={size}>
+				<Defs>
+					<LinearGradient id="gradient" x1="0" x2="100%" y1="0" y2="0">
+						<Stop offset="0" stopColor={firstColor} />
+						<Stop offset="1" stopColor={secondColor} />
+					</LinearGradient>
+				</Defs>
+				<Path
+					fill="none"
+					stroke="url(#gradient)"
+					strokeDasharray={`${circumference}, ${circumference}`}
+					{...{d, strokeWidth}}
+				/>
+				<AnimatedPath
+					fill="none"
+					stroke={staticColor || "#F2F2F2"}
+					strokeDasharray={`${circumference}, ${circumference}`}
+					{...{ d, strokeDashoffset, strokeWidth }}
+				/>
+			</Svg>
+		</View>
 	);
 };
