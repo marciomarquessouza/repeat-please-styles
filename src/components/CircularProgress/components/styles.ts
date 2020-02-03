@@ -16,5 +16,5 @@ export const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		fontSize: 24,
 		color: color.lightText,
-	}
+	},
 });

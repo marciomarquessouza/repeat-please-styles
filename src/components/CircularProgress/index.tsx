@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import Animated, { Easing } from 'react-native-reanimated';
-import { CircularChart, TextChart } from './components'
+import { CircularChart, TextChart } from './components';
 import { styles } from './styles';
 
 const {
@@ -30,7 +30,10 @@ interface ICircularProgressState {
 	hasFinished: boolean;
 }
 
-export class CircularProgressBar extends Component<ICircularProgressProps, ICircularProgressState> {
+export class CircularProgressBar extends Component<
+	ICircularProgressProps,
+	ICircularProgressState
+> {
 	constructor(props: ICircularProgressProps) {
 		super(props);
 		this.state = {
@@ -62,15 +65,12 @@ export class CircularProgressBar extends Component<ICircularProgressProps, ICirc
 				startClock(clock),
 			]),
 			timing(clock, this.state, config),
-			cond(
-				this.state.finished,
-				[
-					stopClock(clock),
-					call([this.state.finished],
-						() => {this.setState({ hasFinished: true })}
-					)
-				]
-			),
+			cond(this.state.finished, [
+				stopClock(clock),
+				call([this.state.finished], () => {
+					this.setState({ hasFinished: true });
+				}),
+			]),
 			this.state.position,
 		]);
 	};
@@ -89,10 +89,7 @@ export class CircularProgressBar extends Component<ICircularProgressProps, ICirc
 					/>
 				</View>
 				<View style={styles.textChartContainer}>
-					<TextChart
-						progress={goal}
-						duration={duration}
-					/>
+					<TextChart progress={goal} duration={duration} />
 				</View>
 			</View>
 		);

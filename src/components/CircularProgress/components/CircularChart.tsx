@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dimensions, View } from 'react-native';
-import Svg, { Defs, LinearGradient, Path, Stop, Text } from 'react-native-svg';
+import Svg, { Defs, LinearGradient, Path, Stop } from 'react-native-svg';
 import Animated from 'react-native-reanimated';
 
 const { width } = Dimensions.get('window');
@@ -26,8 +26,7 @@ export const CircularChart = ({
 	staticColor,
 	gradientColor,
 	barWidth,
-	hasFinished,
-}: ICircularProgressProps ): JSX.Element => {
+}: ICircularProgressProps): JSX.Element => {
 	const size = width - 100 - (lateralMargin || 30);
 	const strokeWidth = barWidth || 50;
 	const centerX = size / 2;
@@ -37,13 +36,13 @@ export const CircularChart = ({
 	const startAngle = PI + PI * 0.2;
 	const endAngle = 2 * PI - PI * 0.2;
 	const startArcX = centerX - radius * cos(startAngle);
-	const startArcY = centerY + (-radius * sin(startAngle));
+	const startArcY = centerY + -radius * sin(startAngle);
 	const endArcX = centerX - radius * cos(endAngle);
-	const endArcY = centerY + (-radius * sin(endAngle));
+	const endArcY = centerY + -radius * sin(endAngle);
 	const circumference = radius * A;
 	const d = `M ${startArcX} ${startArcY} A ${radius} ${radius} 0 1 0 ${endArcX} ${endArcY}`;
-	const firstColor = gradientColor?.firstColor || "#EBD935";
-	const secondColor = gradientColor?.secondColor || "#FFC300";
+	const firstColor = gradientColor?.firstColor || '#EBD935';
+	const secondColor = gradientColor?.secondColor || '#FFC300';
 	const alpha = interpolate(progress, {
 		inputRange: [0, 1],
 		outputRange: [0, A],
@@ -63,11 +62,11 @@ export const CircularChart = ({
 					fill="none"
 					stroke="url(#gradient)"
 					strokeDasharray={`${circumference}, ${circumference}`}
-					{...{d, strokeWidth}}
+					{...{ d, strokeWidth }}
 				/>
 				<AnimatedPath
 					fill="none"
-					stroke={staticColor || "#F2F2F2"}
+					stroke={staticColor || '#F2F2F2'}
 					strokeDasharray={`${circumference}, ${circumference}`}
 					{...{ d, strokeDashoffset, strokeWidth }}
 				/>

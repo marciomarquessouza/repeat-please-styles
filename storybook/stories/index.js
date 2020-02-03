@@ -6,5 +6,4 @@ import './Logos/Logo.stories';
 import './Messages/Messages.stories';
 import './CircularProgress/CircularProgress.stories';
 import './CircularProgress/TextChart.stories';
-import './Stopwatch/Stopwatch.stories';
 
