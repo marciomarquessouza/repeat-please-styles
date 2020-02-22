@@ -6,7 +6,9 @@ export const color = {
 	white: '#FFF',
 	black: '#000',
 	glass: 'rgba(101, 101, 101, 0.3)',
+	light: '#F2F2F2',
 	background: '#EBD935',
+	darkBackground: '#FFC300',
 	transparent: 'transparent',
 	lightText: '#656565',
 };

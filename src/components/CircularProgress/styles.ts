@@ -2,17 +2,12 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
 	container: {
-		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
+		borderColor: 'red',
+		borderWidth: 2,
 	},
-	chartContainer: {
-		justifyContent: 'center',
-		alignItems: 'center',
-		alignSelf: 'center',
-		position: 'absolute',
-	},
-	textChartContainer: {
+	overlayContainer: {
 		justifyContent: 'center',
 		alignItems: 'center',
 		alignSelf: 'center',

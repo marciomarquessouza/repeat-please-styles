@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
-import { CircularProgressBar } from '../../../src/components/CircularProgress';
+import { CircularProgressStage } from '../../../src/components/CircularProgress/stage';
 import { View } from 'react-native';
 
 storiesOf('Progress Bar', module)
@@ -11,4 +11,4 @@ storiesOf('Progress Bar', module)
 	borderWidth: 2,
 	borderColor: 'red',
 }}>{getStory()}</View>)
-.add('Circular Progress Bar', () => <CircularProgressBar goal={0.5} duration={1000} />)
+.add('Circular Progress Bar', () => <CircularProgressStage />)

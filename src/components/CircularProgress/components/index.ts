@@ -1,2 +1,3 @@
-export { CircularChart } from './CircularChart';
-export { TextChart } from './TextChart';
+export { Semicircle } from './Semicircle';
+export { Indicator } from './Indicator';
+export { CircleBase } from './CircleBase';
