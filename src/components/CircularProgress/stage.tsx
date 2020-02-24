@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, SafeAreaView, View, StyleSheet } from 'react-native';
+import { Button } from 'react-native';
 import { CircularProgress } from './';
 
 interface IStageState {
@@ -13,7 +13,7 @@ export class CircularProgressStage extends Component<{}, IStageState> {
 		return (
 			<>
 				<CircularProgress
-					progress={0.7}
+					progress={0.75}
 					duration={1000}
 					startAnimation = {this.state.startAnimation}
 				/>
