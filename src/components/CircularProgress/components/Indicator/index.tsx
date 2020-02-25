@@ -14,11 +14,12 @@ export const Indicator = (props: IIndicatorProps): JSX.Element => {
 	const radius = size / 2;
 
 	return (
-		<Animated.View style={[customStyle, {transform: [{ rotate: rotateLine }]}]}>
-			<Svg width={size+10} height={size}>
+		<Animated.View
+			style={[customStyle, { transform: [{ rotate: rotateLine }] }]}>
+			<Svg width={size + 10} height={size}>
 				<Line
-					x1={size/2}
-					y1={size/2}
+					x1={size / 2}
+					y1={size / 2}
 					x2={0}
 					y2={radius}
 					stroke={color}

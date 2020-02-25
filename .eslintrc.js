@@ -4,9 +4,9 @@ module.exports = {
 	rules: {
 		"react-native/no-inline-styles": 0,
 		"complexity": ["error", { "max": 8 }],
-		"max-lines": ["error", { "max": 100, "skipBlankLines": true, "skipComments": true }],
+		"max-lines": ["error", { "max": 120, "skipBlankLines": true, "skipComments": true }],
 		"max-lines-per-function": ["error", { "max": 60, "skipBlankLines": true, "skipComments": true }],
-		"max-params": ["error", { "max": 3 }],
+		"max-params": ["error", { "max": 10 }],
 		"max-depth": ["error", { "max": 2 }],
 		"max-statements": ["error", 10, { "ignoreTopLevelFunctions": true }],
 		"semi": "error",

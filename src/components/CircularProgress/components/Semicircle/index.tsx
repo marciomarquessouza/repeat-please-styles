@@ -3,7 +3,7 @@ import { Animated } from 'react-native';
 import Svg, { Defs, LinearGradient, Stop, Path } from 'react-native-svg';
 
 interface ISemicircleProps {
-	color: string | { color1: string, color2: string };
+	color: string | { color1: string; color2: string };
 	side: number;
 	rotate: Animated.AnimatedInterpolation | string;
 	size: number;
@@ -32,7 +32,10 @@ export const Semicircle = (props: ISemicircleProps) => {
 						<Stop offset="1" stopColor={color2} />
 					</LinearGradient>
 				</Defs>
-				<Path fill={circleColor} d={`M 0 ${radius} a 1 1 0 0 ${side} ${size} 0`} />
+				<Path
+					fill={circleColor}
+					d={`M 0 ${radius} a 1 1 0 0 ${side} ${size} 0`}
+				/>
 			</Svg>
 		</Animated.View>
 	);

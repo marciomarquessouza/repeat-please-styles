@@ -14,8 +14,8 @@ export const CircleBase = (props: ICircleBaseProps): JSX.Element => {
 	return (
 		<View style={customStyle}>
 			<Svg width={size} height={size}>
-				<Circle cx={size/2} cy={size/2} r={radius} fill={color} />
+				<Circle cx={size / 2} cy={size / 2} r={radius} fill={color} />
 			</Svg>
 		</View>
-	)
-}
+	);
+};

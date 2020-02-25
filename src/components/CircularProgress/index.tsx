@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { Animated, Dimensions, View } from 'react-native';
-import { IAnimationFactory, animationFactory } from '../../animation/animationFactory';
+import {
+	IAnimationFactory,
+	animationFactory,
+} from '../../animation/animationFactory';
 import { Semicircle, Indicator, CircleBase } from './components';
-import { semicircleAnimation, indicatorAnimation } from './animations'
+import { semicircleAnimation, indicatorAnimation } from './animations';
 import { ICircularProgressProps, ICircularProgressState } from './types';
 import { color } from '../../theme';
 import { styles } from './styles';
 
 const { width } = Dimensions.get('window');
 
-export class CircularProgress extends Component<ICircularProgressProps, ICircularProgressState>{
+export class CircularProgress extends Component<
+	ICircularProgressProps,
+	ICircularProgressState
+> {
 	private lineAnimation = new Animated.Value(0);
 	private circleAnimationUp = new Animated.Value(0);
 	private circleAnimationDown = new Animated.Value(0);
@@ -36,7 +42,7 @@ export class CircularProgress extends Component<ICircularProgressProps, ICircula
 			() => this.setState({ showCircleUp: false }),
 		);
 		animationFactory(circleAnimation);
-	}
+	};
 
 	indicatorAnimation = () => {
 		const { duration, progress } = this.props;
@@ -46,11 +52,10 @@ export class CircularProgress extends Component<ICircularProgressProps, ICircula
 			this.lineAnimation,
 		);
 		animationFactory(lineAnimation);
-	}
+	};
 
 	render() {
 		const { lateralMargin, barWidth } = this.props;
-		const { showCircleUp } = this.state;
 		const {
 			background: color1,
 			darkBackground: color2,
@@ -58,7 +63,7 @@ export class CircularProgress extends Component<ICircularProgressProps, ICircula
 			white,
 			lightText,
 		} = color;
-		const gradient = { color1 , color2 };
+		const gradient = { color1, color2 };
 		const size = width - 2 * (lateralMargin || 50);
 		const radius = size / 2;
 		const rotateLine = this.lineAnimation.interpolate({
@@ -79,7 +84,9 @@ export class CircularProgress extends Component<ICircularProgressProps, ICircula
 				<Semicircle {...{ color: gradient, side: 0, rotate: '0deg', size }} />
 				<Semicircle {...{ color: light, side: 0, rotate: circleDown, size }} />
 				<Semicircle {...{ color: gradient, side: 1, rotate: '0deg', size }} />
-				{showCircleUp && <Semicircle {...{ color: light, side: 1, rotate: circleUp, size }} />}
+				{this.state.showCircleUp && (
+					<Semicircle {...{ color: light, side: 1, rotate: circleUp, size }} />
+				)}
 			</>
 		);
 

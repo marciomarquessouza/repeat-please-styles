@@ -11,13 +11,7 @@ export interface IAnimationFactory {
 export const animationFactory = (animations: IAnimationFactory[]) => {
 	if (!animations.length) return false;
 	const animation = animations[0];
-	const {
-		animationObject,
-		toValue,
-		duration,
-		easing,
-		callback
-	} = animation;
+	const { animationObject, toValue, duration, easing, callback } = animation;
 	Animated.timing(animationObject, {
 		toValue,
 		duration,

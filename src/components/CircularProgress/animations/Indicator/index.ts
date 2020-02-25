@@ -5,12 +5,11 @@ export const indicatorAnimation = (
 	progress: number,
 	duration: number,
 	lineAnimation: Animated.Value,
-	callback?: () => void,
 ): IAnimationFactory[] => {
 	const lineAnimations: IAnimationFactory[] = [];
 	const isHalf = progress < 0.5;
 	const lineUpProgress = isHalf ? progress : 0.5;
-	const lineUpDuration = isHalf ? duration : (duration * lineUpProgress);
+	const lineUpDuration = isHalf ? duration : duration * lineUpProgress;
 	const lineUpAnimation: IAnimationFactory = {
 		animationObject: lineAnimation,
 		toValue: lineUpProgress,

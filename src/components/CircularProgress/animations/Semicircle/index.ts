@@ -10,8 +10,8 @@ export const semicircleAnimation = (
 ): IAnimationFactory[] => {
 	const circleAnimations: IAnimationFactory[] = [];
 	const isHalf = progress < 0.5;
-	const circleUpProgress =  isHalf ? progress : 0.5;
-	const circleUpDuration = isHalf ? duration : (duration * circleUpProgress);
+	const circleUpProgress = isHalf ? progress : 0.5;
+	const circleUpDuration = isHalf ? duration : duration * circleUpProgress;
 	const circleUpAnimation: IAnimationFactory = {
 		animationObject: circleAnimationUp,
 		toValue: circleUpProgress,
