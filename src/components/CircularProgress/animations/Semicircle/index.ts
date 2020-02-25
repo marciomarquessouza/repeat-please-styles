@@ -17,7 +17,7 @@ export const semicircleAnimation = (
 		toValue: circleUpProgress,
 		duration: circleUpDuration,
 		easing: Easing.linear,
-		callback,
+		callback: isHalf ? undefined : callback,
 	};
 
 	circleAnimations.push(circleUpAnimation);
