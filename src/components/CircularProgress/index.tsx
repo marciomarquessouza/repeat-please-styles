@@ -64,7 +64,7 @@ export class CircularProgress extends Component<
 			lightText,
 		} = color;
 		const gradient = { color1, color2 };
-		const size = width - 2 * (lateralMargin || 50);
+		const size = width - 2 * (lateralMargin || 65);
 		const radius = size / 2;
 		const rotateLine = this.lineAnimation.interpolate({
 			inputRange: [0, 1],
