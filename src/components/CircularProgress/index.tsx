@@ -9,6 +9,7 @@ import { semicircleAnimation, indicatorAnimation } from './animations';
 import { ICircularProgressProps, ICircularProgressState } from './types';
 import { color } from '../../theme';
 import { styles } from './styles';
+import { MonkeyHead } from './components/MonkeyHead';
 
 const { width } = Dimensions.get('window');
 
@@ -46,6 +47,7 @@ export class CircularProgress extends Component<
 
 	indicatorAnimation = () => {
 		const { duration, progress } = this.props;
+		this.lineAnimation.addListener(({value}) => console.log('VALUE', Math.cos(value * 2 * Math.PI)));
 		const lineAnimation: IAnimationFactory[] = indicatorAnimation(
 			progress,
 			duration,
@@ -55,7 +57,7 @@ export class CircularProgress extends Component<
 	};
 
 	render() {
-		const { lateralMargin, barWidth } = this.props;
+		const { lateralMargin, barWidth, progress } = this.props;
 		const {
 			background: color1,
 			darkBackground: color2,
@@ -106,6 +108,11 @@ export class CircularProgress extends Component<
 					color={white}
 					size={size}
 					customStyle={styles.overlayContainer}
+				/>
+				<MonkeyHead
+					size={35}
+					progress={progress}
+					chartSize={size}
 				/>
 			</View>
 		);
