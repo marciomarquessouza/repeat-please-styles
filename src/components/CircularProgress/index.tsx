@@ -23,7 +23,10 @@ export class CircularProgress extends Component<
 
 	constructor(props: ICircularProgressProps) {
 		super(props);
-		this.state = { showCircleUp: true };
+		this.state = {
+			showCircleUp: true,
+			showMonkeyHead: false,
+		};
 	}
 
 	componentDidUpdate(prevProps: ICircularProgressProps): void {
@@ -47,11 +50,11 @@ export class CircularProgress extends Component<
 
 	indicatorAnimation = () => {
 		const { duration, progress } = this.props;
-		this.lineAnimation.addListener(({value}) => console.log('VALUE', Math.cos(value * 2 * Math.PI)));
 		const lineAnimation: IAnimationFactory[] = indicatorAnimation(
 			progress,
 			duration,
 			this.lineAnimation,
+			() => this.setState({ showMonkeyHead: true }),
 		);
 		animationFactory(lineAnimation);
 	};
@@ -109,11 +112,11 @@ export class CircularProgress extends Component<
 					size={size}
 					customStyle={styles.overlayContainer}
 				/>
-				<MonkeyHead
-					size={35}
+				{this.state.showMonkeyHead && <MonkeyHead
+					size={50}
 					progress={progress}
 					chartSize={size}
-				/>
+				/>}
 			</View>
 		);
 	}

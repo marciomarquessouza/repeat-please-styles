@@ -8,4 +8,5 @@ export interface ICircularProgressProps {
 
 export interface ICircularProgressState {
 	showCircleUp: boolean;
+	showMonkeyHead: boolean;
 }

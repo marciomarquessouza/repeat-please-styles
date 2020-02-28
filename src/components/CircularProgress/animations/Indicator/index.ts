@@ -5,6 +5,7 @@ export const indicatorAnimation = (
 	progress: number,
 	duration: number,
 	lineAnimation: Animated.Value,
+	callback?: () => void,
 ): IAnimationFactory[] => {
 	const lineAnimations: IAnimationFactory[] = [];
 	const isHalf = progress < 0.5;
@@ -15,6 +16,7 @@ export const indicatorAnimation = (
 		toValue: lineUpProgress,
 		duration: lineUpDuration,
 		easing: Easing.linear,
+		callback: isHalf ? callback : undefined,
 	};
 
 	lineAnimations.push(lineUpAnimation);
@@ -27,6 +29,7 @@ export const indicatorAnimation = (
 			toValue: progress,
 			duration: lineDownDuration,
 			easing: Easing.linear,
+			callback,
 		};
 		lineAnimations.push(lineDownAnimation);
 	}
