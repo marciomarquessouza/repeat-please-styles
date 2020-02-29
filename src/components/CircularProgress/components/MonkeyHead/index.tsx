@@ -36,9 +36,9 @@ export class MonkeyHead extends Component<IMonkeyHeadProps, {}> {
 			require('../../../../../assets/images/MouthMonkey.png'),
 			require('../../../../../assets/images/SmileMonkey.png'),
 		];
-		if (progress > 0.75) {
+		if (progress >= 0.75) {
 			return monkeyImages[2];
-		} else if (progress >= 0.25 && progress <= 0.75) {
+		} else if (progress >= 0.25 && progress < 0.75) {
 			return monkeyImages[1];
 		} else {
 			return monkeyImages[0];
@@ -61,13 +61,20 @@ export class MonkeyHead extends Component<IMonkeyHeadProps, {}> {
 					right: posX,
 					width: size,
 					height: size,
+					opacity: this.bounceAnimation,
 					transform: [
 						{ translateX: -cos(progress * 2 * PI) * 35 },
 						{ translateY: sin(progress * 2 * PI) * -35 },
 						{ scale: this.bounceAnimation },
 					],
 				}}>
-				<Image source={this.monkeyImage(progress)} />
+				<Image
+					source={this.monkeyImage(progress)}
+					style={{
+						width: size,
+						height: size,
+					}}
+				/>
 			</Animated.View>
 		);
 	}
