@@ -10,6 +10,7 @@ import { ICircularProgressProps, ICircularProgressState } from './types';
 import { color } from '../../theme';
 import { styles } from './styles';
 import { MonkeyHead } from './components/MonkeyHead';
+import { TextChart } from './components/TextChart'
 
 const { width } = Dimensions.get('window');
 
@@ -26,6 +27,7 @@ export class CircularProgress extends Component<
 		this.state = {
 			showCircleUp: true,
 			showMonkeyHead: false,
+			showTextChart: false,
 		};
 	}
 
@@ -54,7 +56,10 @@ export class CircularProgress extends Component<
 			progress,
 			duration,
 			this.lineAnimation,
-			() => this.setState({ showMonkeyHead: true }),
+			() => this.setState({
+				showMonkeyHead: true,
+				showTextChart: true,
+			}),
 		);
 		animationFactory(lineAnimation);
 	};
@@ -115,6 +120,12 @@ export class CircularProgress extends Component<
 				{this.state.showMonkeyHead && (
 					<MonkeyHead progress={progress} chartSize={size} />
 				)}
+				{this.state.showTextChart &&
+					<TextChart
+						progress={progress}
+						textChart="Week Goal"
+					/>
+				}
 			</View>
 		);
 	}

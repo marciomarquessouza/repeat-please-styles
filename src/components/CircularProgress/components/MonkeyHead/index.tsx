@@ -56,10 +56,10 @@ export class MonkeyHead extends Component<IMonkeyHeadProps, {}> {
 		return (
 			<Animated.View
 				style={{
+					position: 'absolute',
 					justifyContent: 'center',
 					alignItems: 'center',
 					alignSelf: 'center',
-					position: 'absolute',
 					opacity: this.bounceAnimation,
 					transform: [
 						{ translateX: posX },

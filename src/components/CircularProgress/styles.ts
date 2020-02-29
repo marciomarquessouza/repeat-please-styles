@@ -4,8 +4,6 @@ export const styles = StyleSheet.create({
 	container: {
 		justifyContent: 'center',
 		alignItems: 'center',
-		borderColor: 'green',
-		borderWidth: 2,
 	},
 	overlayContainer: {
 		justifyContent: 'center',
