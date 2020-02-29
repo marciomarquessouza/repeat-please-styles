@@ -10,7 +10,7 @@ import { ICircularProgressProps, ICircularProgressState } from './types';
 import { color } from '../../theme';
 import { styles } from './styles';
 import { MonkeyHead } from './components/MonkeyHead';
-import { TextChart } from './components/TextChart'
+import { TextChart } from './components/TextChart';
 
 const { width } = Dimensions.get('window');
 
@@ -35,7 +35,7 @@ export class CircularProgress extends Component<
 		if (prevProps.startAnimation !== this.props.startAnimation) {
 			this.chartAnimation();
 			this.indicatorAnimation();
-			this.setState({ showTextChart: true });
+			this.textAnimation();
 		}
 	}
 
@@ -51,6 +51,10 @@ export class CircularProgress extends Component<
 		animationFactory(circleAnimation);
 	};
 
+	textAnimation = () => {
+		this.setState({ showTextChart: true });
+	};
+
 	indicatorAnimation = () => {
 		const { duration, progress } = this.props;
 		const lineAnimation: IAnimationFactory[] = indicatorAnimation(
@@ -64,12 +68,7 @@ export class CircularProgress extends Component<
 
 	render() {
 		const { lateralMargin, barWidth, progress } = this.props;
-		const {
-			background,
-			light,
-			white,
-			lightText,
-		} = color;
+		const { background, light, white, lightText } = color;
 		const size = width - 2 * (lateralMargin || 65);
 		const radius = size / 2;
 		const rotateLine = this.lineAnimation.interpolate({
@@ -116,13 +115,13 @@ export class CircularProgress extends Component<
 				{this.state.showMonkeyHead && (
 					<MonkeyHead progress={progress} chartSize={size} />
 				)}
-				{this.state.showTextChart &&
+				{this.state.showTextChart && (
 					<TextChart
 						progress={progress}
 						textChart="Week Goal"
 						duration={this.props.duration}
 					/>
-				}
+				)}
 			</View>
 		);
 	}

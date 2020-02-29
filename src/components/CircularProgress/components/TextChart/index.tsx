@@ -16,7 +16,7 @@ interface ITextChartState {
 	percentValue: number;
 }
 
-export class TextChart extends Component<ITextChartProps, ITextChartState>{
+export class TextChart extends Component<ITextChartProps, ITextChartState> {
 	constructor(props: ITextChartProps) {
 		super(props);
 		this.state = {
@@ -29,34 +29,38 @@ export class TextChart extends Component<ITextChartProps, ITextChartState>{
 		this.textAnimation();
 	}
 
-	textAnimation = (): void => {
-		const { duration, progress } = this.props;
-		const { textAnimation } = this.state;
-		textAnimation.addListener(({ value }) => this.setState({ percentValue: value }));
-		const textAnimationConfig: IAnimationFactory = {
-			animationObject: textAnimation,
-			toValue: progress,
-			duration,
-			easing: Easing.linear
-		};
-		animationFactory([textAnimationConfig]);
-	}
-
 	componentWillUnmount() {
 		this.state.textAnimation.removeAllListeners();
 	}
 
+	textAnimation = (): void => {
+		const { duration, progress } = this.props;
+		const { textAnimation } = this.state;
+		textAnimation.addListener(({ value }) =>
+			this.setState({ percentValue: value }),
+		);
+		const textAnimationConfig: IAnimationFactory = {
+			animationObject: textAnimation,
+			toValue: progress,
+			duration,
+			easing: Easing.linear,
+		};
+		animationFactory([textAnimationConfig]);
+	};
+
 	progressPercent = (progress: number): string => {
 		const roundProgress = Math.round(progress * 100);
 		return `${roundProgress}%`;
-	}
+	};
 
 	render() {
 		const { textChart } = this.props;
 		const { percentValue } = this.state;
-		return(
+		return (
 			<View style={styles.container}>
-				<Text style={styles.headStyle}>{this.progressPercent(percentValue)}</Text>
+				<Text style={styles.headStyle}>
+					{this.progressPercent(percentValue)}
+				</Text>
 				<Text style={styles.subHeadStyle}>{textChart}</Text>
 			</View>
 		);
