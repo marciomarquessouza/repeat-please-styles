@@ -35,6 +35,7 @@ export class CircularProgress extends Component<
 		if (prevProps.startAnimation !== this.props.startAnimation) {
 			this.chartAnimation();
 			this.indicatorAnimation();
+			this.setState({ showTextChart: true });
 		}
 	}
 
@@ -56,10 +57,7 @@ export class CircularProgress extends Component<
 			progress,
 			duration,
 			this.lineAnimation,
-			() => this.setState({
-				showMonkeyHead: true,
-				showTextChart: true,
-			}),
+			() => this.setState({ showMonkeyHead: true }),
 		);
 		animationFactory(lineAnimation);
 	};
@@ -67,13 +65,11 @@ export class CircularProgress extends Component<
 	render() {
 		const { lateralMargin, barWidth, progress } = this.props;
 		const {
-			background: color1,
-			darkBackground: color2,
+			background,
 			light,
 			white,
 			lightText,
 		} = color;
-		const gradient = { color1, color2 };
 		const size = width - 2 * (lateralMargin || 65);
 		const radius = size / 2;
 		const rotateLine = this.lineAnimation.interpolate({
@@ -91,9 +87,9 @@ export class CircularProgress extends Component<
 
 		const SemiCircles = (
 			<>
-				<Semicircle {...{ color: gradient, side: 0, rotate: '0deg', size }} />
+				<Semicircle {...{ color: background, side: 0, rotate: '0deg', size }} />
 				<Semicircle {...{ color: light, side: 0, rotate: circleDown, size }} />
-				<Semicircle {...{ color: gradient, side: 1, rotate: '0deg', size }} />
+				<Semicircle {...{ color: background, side: 1, rotate: '0deg', size }} />
 				{this.state.showCircleUp && (
 					<Semicircle {...{ color: light, side: 1, rotate: circleUp, size }} />
 				)}
@@ -124,6 +120,7 @@ export class CircularProgress extends Component<
 					<TextChart
 						progress={progress}
 						textChart="Week Goal"
+						duration={this.props.duration}
 					/>
 				}
 			</View>

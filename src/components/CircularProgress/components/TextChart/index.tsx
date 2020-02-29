@@ -1,22 +1,67 @@
-import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, StyleSheet, View, Animated, Easing } from 'react-native';
+import {
+	animationFactory,
+	IAnimationFactory,
+} from '../../../../animation/animationFactory';
 
 interface ITextChartProps {
+	duration: number;
 	progress: number;
 	textChart: string;
 }
 
-const progressPercent = (progress: number): string => {
-	const roundProgress = Math.round(progress * 100);
-	return `${roundProgress}%`;
+interface ITextChartState {
+	textAnimation: Animated.Value;
+	percentValue: number;
 }
 
-export const TextChart = (props: ITextChartProps): JSX.Element => (
-	<View style={styles.container}>
-		<Text style={styles.headStyle}>{progressPercent(props.progress)}</Text>
-		<Text style={styles.subHeadStyle}>{props.textChart}</Text>
-	</View>
-);
+export class TextChart extends Component<ITextChartProps, ITextChartState>{
+	constructor(props: ITextChartProps) {
+		super(props);
+		this.state = {
+			textAnimation: new Animated.Value(0),
+			percentValue: 0,
+		};
+	}
+
+	componentDidMount() {
+		this.textAnimation();
+	}
+
+	textAnimation = (): void => {
+		const { duration, progress } = this.props;
+		const { textAnimation } = this.state;
+		textAnimation.addListener(({ value }) => this.setState({ percentValue: value }));
+		const textAnimationConfig: IAnimationFactory = {
+			animationObject: textAnimation,
+			toValue: progress,
+			duration,
+			easing: Easing.linear
+		};
+		animationFactory([textAnimationConfig]);
+	}
+
+	componentWillUnmount() {
+		this.state.textAnimation.removeAllListeners();
+	}
+
+	progressPercent = (progress: number): string => {
+		const roundProgress = Math.round(progress * 100);
+		return `${roundProgress}%`;
+	}
+
+	render() {
+		const { textChart } = this.props;
+		const { percentValue } = this.state;
+		return(
+			<View style={styles.container}>
+				<Text style={styles.headStyle}>{this.progressPercent(percentValue)}</Text>
+				<Text style={styles.subHeadStyle}>{textChart}</Text>
+			</View>
+		);
+	}
+}
 
 const styles = StyleSheet.create({
 	container: {

@@ -13,7 +13,7 @@ export class CircularProgressStage extends Component<{}, IStageState> {
 		return (
 			<>
 				<CircularProgress
-					progress={0.75455454}
+					progress={0.48}
 					duration={1000}
 					startAnimation={this.state.startAnimation}
 				/>
