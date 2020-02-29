@@ -112,11 +112,9 @@ export class CircularProgress extends Component<
 					size={size}
 					customStyle={styles.overlayContainer}
 				/>
-				{this.state.showMonkeyHead && <MonkeyHead
-					size={50}
-					progress={progress}
-					chartSize={size}
-				/>}
+				{this.state.showMonkeyHead && (
+					<MonkeyHead size={50} progress={progress} chartSize={size} />
+				)}
 			</View>
 		);
 	}
