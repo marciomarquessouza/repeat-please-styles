@@ -96,7 +96,7 @@ export class CircularProgress extends Component<
 		);
 
 		return (
-			<View style={styles.container}>
+			<View style={[styles.container, { width, height: width }]}>
 				{SemiCircles}
 				<Indicator
 					{...{
@@ -113,7 +113,7 @@ export class CircularProgress extends Component<
 					customStyle={styles.overlayContainer}
 				/>
 				{this.state.showMonkeyHead && (
-					<MonkeyHead size={50} progress={progress} chartSize={size} />
+					<MonkeyHead progress={progress} chartSize={size} />
 				)}
 			</View>
 		);

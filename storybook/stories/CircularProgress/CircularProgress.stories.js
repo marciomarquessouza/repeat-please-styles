@@ -8,7 +8,7 @@ storiesOf('Progress Bar', module)
 	flex: 1,
 	justifyContent: 'center',
 	alignItems: 'center',
-	borderWidth: 2,
 	borderColor: 'red',
+	borderWidth: 2,
 }}>{getStory()}</View>)
 .add('Circular Progress Bar', () => <CircularProgressStage />)

@@ -6,7 +6,6 @@ import {
 } from '../../../../animation/animationFactory';
 
 interface IMonkeyHeadProps {
-	size: number;
 	progress: number;
 	chartSize: number;
 }
@@ -46,33 +45,33 @@ export class MonkeyHead extends Component<IMonkeyHeadProps, {}> {
 	};
 
 	render() {
+		const SIZE = 50;
 		const { PI, sin, cos } = Math;
-		const { size, chartSize, progress } = this.props;
-		const radius = size / 2;
+		const { chartSize, progress } = this.props;
+		const radius = SIZE / 2;
 		const chartRadius = chartSize / 2;
-		const posX = cos(progress * 2 * PI) * chartRadius - radius;
-		const posY = -sin(progress * 2 * PI) * chartRadius - radius;
+		const posX = -cos(progress * 2 * PI) * (chartRadius + radius + 10);
+		const posY = -sin(progress * 2 * PI) * (chartRadius + radius + 10);
 
 		return (
 			<Animated.View
 				style={{
+					justifyContent: 'center',
+					alignItems: 'center',
+					alignSelf: 'center',
 					position: 'absolute',
-					top: posY,
-					right: posX,
-					width: size,
-					height: size,
 					opacity: this.bounceAnimation,
 					transform: [
-						{ translateX: -cos(progress * 2 * PI) * 35 },
-						{ translateY: sin(progress * 2 * PI) * -35 },
+						{ translateX: posX },
+						{ translateY: posY },
 						{ scale: this.bounceAnimation },
 					],
 				}}>
 				<Image
 					source={this.monkeyImage(progress)}
 					style={{
-						width: size,
-						height: size,
+						width: SIZE,
+						height: SIZE,
 					}}
 				/>
 			</Animated.View>
