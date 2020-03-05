@@ -5,3 +5,4 @@ import './Button/Button.stories';
 import './Logos/Logo.stories';
 import './Messages/Messages.stories';
 import './CircularProgress/CircularProgress.stories';
+import './Slides/Slides.stories';
