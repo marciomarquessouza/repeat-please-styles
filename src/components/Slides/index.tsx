@@ -53,13 +53,12 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 
 				if (gesture.dx <= -SWIPE_THRESHOLD && index !== slides.length - 1) {
 					this.moveSlide({ x: -WIDTH * ++index, y: 0 });
-				}
-
-				if (gesture.dx >= SWIPE_THRESHOLD && index !== 0) {
+				} else if (gesture.dx >= SWIPE_THRESHOLD && index !== 0) {
 					this.moveSlide({ x: -WIDTH * --index, y: 0 });
+				} else {
+					this.moveSlide({ x: -WIDTH * index, y: 0 });
 				}
 
-				this.moveSlide({ x: -WIDTH * index, y: 0 });
 				lastPosition = -WIDTH * index;
 			},
 		});
@@ -109,7 +108,7 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 				style={{
 					flex: 1,
 					flexDirection: 'row',
-					transform: [{ translateX: position.x }],
+					left: position.x,
 				}}
 				{...panResponder.panHandlers}>
 				{slidesPanel}
