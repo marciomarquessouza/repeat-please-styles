@@ -9,6 +9,7 @@ import {
 	View,
 } from 'react-native';
 import { styles } from './styles';
+import { MonkeyHead } from 	'./components/MonkeyHead';
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
@@ -24,6 +25,8 @@ interface ISlideProps {
 interface ISlideState {
 	position: Animated.ValueXY;
 	panResponder: PanResponderInstance;
+	startAnimation: boolean;
+	index: number;
 }
 
 export class Slide extends Component<ISlideProps, ISlideState> {
@@ -31,7 +34,7 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 		super(props);
 		const position = new Animated.ValueXY();
 		const panResponder = PanResponder.create({
-			onStartShouldSetPanResponder: () => true,
+			onStartShouldSetPanResponder: () => this.state.startAnimation,
 			onPanResponderMove: (_, gesture: PanResponderGestureState) => {
 				const { slides } = this.props;
 				const currentPosition = lastPosition + gesture.dx;
@@ -60,12 +63,15 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 				}
 
 				lastPosition = -WIDTH * index;
+				this.setState({ index })
 			},
 		});
 
 		this.state = {
 			position,
 			panResponder,
+			startAnimation: true,
+			index,
 		};
 	}
 
@@ -117,6 +123,13 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 	};
 
 	render() {
-		return <>{this.renderSlides()}</>;
+		return (
+			<>
+				<View>
+					{this.renderSlides()}
+				</View>
+				<MonkeyHead index={this.state.index} height={HEIGHT} />
+			</>
+		);
 	}
 }
