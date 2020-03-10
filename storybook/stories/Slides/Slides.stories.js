@@ -5,18 +5,14 @@ import { Slide } from '../../../src/components/Slides/';
 import { color } from '../../../src/theme';
 
 const slides = [];
-[1,2,3,4].map((value) => {
+[1,2,3].map((value) => {
 	slides.push((
 		<View style={{
 			flex: 1,
-			borderColor: 'green',
 			backgroundColor: color.background,
-			borderWidth: 2,
 			justifyContent: 'center',
 			alignItems: 'center',
-		}}>
-			<Text>{`Slide ${value}`}</Text>
-		</View>
+		}} />
 	));
 });
 

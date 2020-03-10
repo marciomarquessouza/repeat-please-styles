@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { styles } from './styles';
 import { MonkeyHead } from 	'./components/MonkeyHead';
+import { Slider } from './components/Slider';
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
@@ -55,15 +56,14 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 				const { slides } = this.props;
 
 				if (gesture.dx <= -SWIPE_THRESHOLD && index !== slides.length - 1) {
-					this.moveSlide({ x: -WIDTH * ++index, y: 0 });
+					this.nextSlide();
 				} else if (gesture.dx >= SWIPE_THRESHOLD && index !== 0) {
-					this.moveSlide({ x: -WIDTH * --index, y: 0 });
+					this.previousSlide();
 				} else {
-					this.moveSlide({ x: -WIDTH * index, y: 0 });
+					this.resetSlide();
 				}
 
 				lastPosition = -WIDTH * index;
-				this.setState({ index })
 			},
 		});
 
@@ -81,12 +81,29 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 		</View>
 	);
 
-	moveSlide = (toValue: { x: number; y: number }) => {
+	moveSlide = (toValue: { x: number; y: number }): void => {
 		Animated.timing(this.state.position, {
 			toValue,
 			duration: SLIDE_TIMING,
 		}).start();
 	};
+
+	nextSlide = (): void => {
+		const { slides } = this.props;
+		if (this.state.index === slides.length - 1) return;
+		this.moveSlide({ x: -WIDTH * ++index, y: 0 });
+		this.setState({ index });
+	};
+
+	previousSlide = (): void => {
+		if (this.state.index === 0) return;
+		this.moveSlide({ x: -WIDTH * --index, y: 0 });
+		this.setState({ index });
+	}
+
+	resetSlide = (): void => {
+		this.moveSlide({ x: -WIDTH * index, y: 0 });
+	}
 
 	renderSlides = (): JSX.Element => {
 		const { slides } = this.props;
@@ -123,12 +140,23 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 	};
 
 	render() {
+		const { slides } = this.props;
 		return (
 			<>
 				<View>
 					{this.renderSlides()}
 				</View>
-				<MonkeyHead index={this.state.index} height={HEIGHT} />
+				<MonkeyHead
+					index={this.state.index}
+					height={HEIGHT}
+					onPress={() => this.nextSlide()}
+				/>
+				<Slider
+					slideTotal={slides.length}
+					index={this.state.index}
+					onBack={() => this.previousSlide()}
+					onNext={() => this.nextSlide()}
+				/>
 			</>
 		);
 	}
