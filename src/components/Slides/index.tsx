@@ -5,12 +5,11 @@ import {
 	PanResponder,
 	PanResponderInstance,
 	PanResponderGestureState,
-	Text,
 	View,
 } from 'react-native';
-import { styles } from './styles';
-import { MonkeyHead } from 	'./components/MonkeyHead';
+import { MonkeyHead } from './components/MonkeyHead';
 import { Slider } from './components/Slider';
+import { RenderSlides } from './components/RenderSlides';
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
@@ -75,12 +74,6 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 		};
 	}
 
-	noSlide = (): JSX.Element => (
-		<View style={styles.noSlideStyle}>
-			<Text>No slides available</Text>
-		</View>
-	);
-
 	moveSlide = (toValue: { x: number; y: number }): void => {
 		Animated.timing(this.state.position, {
 			toValue,
@@ -99,52 +92,28 @@ export class Slide extends Component<ISlideProps, ISlideState> {
 		if (this.state.index === 0) return;
 		this.moveSlide({ x: -WIDTH * --index, y: 0 });
 		this.setState({ index });
-	}
+	};
 
 	resetSlide = (): void => {
 		this.moveSlide({ x: -WIDTH * index, y: 0 });
-	}
-
-	renderSlides = (): JSX.Element => {
-		const { slides } = this.props;
-		const { panResponder, position } = this.state;
-		const slidesPanel: JSX.Element[] = [];
-
-		if (!slides.length) return this.noSlide();
-
-		slides.map((slide, slideIndex: number) => {
-			slidesPanel.push(
-				<View
-					key={slideIndex}
-					style={{
-						top: 0,
-						height: HEIGHT,
-						width: WIDTH,
-					}}>
-					{slide}
-				</View>,
-			);
-		});
-
-		return (
-			<Animated.View
-				style={{
-					flex: 1,
-					flexDirection: 'row',
-					left: position.x,
-				}}
-				{...panResponder.panHandlers}>
-				{slidesPanel}
-			</Animated.View>
-		);
 	};
 
 	render() {
 		const { slides } = this.props;
+		const { position, panResponder } = this.state;
+
 		return (
 			<>
 				<View>
-					{this.renderSlides()}
+					<RenderSlides
+						{...{
+							panResponder,
+							slides,
+							position,
+							height: HEIGHT,
+							width: WIDTH,
+						}}
+					/>
 				</View>
 				<MonkeyHead
 					index={this.state.index}

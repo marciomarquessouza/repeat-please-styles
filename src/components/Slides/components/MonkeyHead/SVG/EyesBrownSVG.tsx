@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Path } from "react-native-svg";
+import React from 'react';
+import { Path } from 'react-native-svg';
 
 export const EyeBrow = {
 	sad: (
@@ -10,6 +10,13 @@ export const EyeBrow = {
 			strokeLinecap="round"
 		/>
 	),
-	curious: null,
+	curious: (
+		<Path
+			d="M153.747 109.434l24.04.853M82.74 109.666l24.053.389"
+			stroke="#000"
+			strokeWidth={8}
+			strokeLinecap="round"
+		/>
+	),
 	happy: null,
 };

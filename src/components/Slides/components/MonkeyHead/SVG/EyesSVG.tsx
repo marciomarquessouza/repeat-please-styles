@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Path } from "react-native-svg";
+import * as React from 'react';
+import { Path } from 'react-native-svg';
 
 export const Eyes = {
 	sad: (
@@ -24,6 +24,6 @@ export const Eyes = {
 			stroke="#000"
 			strokeWidth={8}
 			strokeLinecap="round"
-      	/>
+		/>
 	),
 };

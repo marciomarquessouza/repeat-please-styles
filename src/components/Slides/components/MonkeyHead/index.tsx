@@ -15,7 +15,7 @@ export const MonkeyHead = (props: IMonkeyHeadProps): JSX.Element => {
 
 	const { height, onPress } = props;
 	const monkeyHeadSize = { width: 252, height: 280 };
-	const top = (height / 2) - (monkeyHeadSize.height / 2);
+	const top = height / 2 - monkeyHeadSize.height / 2;
 
 	return (
 		<View style={[styles.monkeyHeadDesign, { top }]}>
@@ -36,5 +36,5 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		alignSelf: 'center',
 		position: 'absolute',
-	}
+	},
 });

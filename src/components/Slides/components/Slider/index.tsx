@@ -20,27 +20,33 @@ const WIDTH = Dimensions.get('window').width;
 export const Slider = (props: ISliderProps): JSX.Element => {
 	const { index, slideTotal, onBack, onNext } = props;
 	const firstSlide = index === 0;
-	const lastSlide = index === (slideTotal - 1);
+	const lastSlide = index === slideTotal - 1;
+
 	return (
 		<View style={styles.slidePosition}>
 			<View style={styles.sliderContainer}>
 				<TouchableOpacity onPress={onBack} disabled={firstSlide}>
-					<Text style={[styles.navigatorStyle, { opacity: firstSlide ? 0.3 : 1 }]}>
+					<Text
+						style={[styles.navigatorStyle, { opacity: firstSlide ? 0.3 : 1 }]}>
 						BACK
 					</Text>
 				</TouchableOpacity>
 				<View style={styles.indicatorContainer}>
-					{Array(slideTotal).fill(0).map((_, slideKey)=>(
-						<View
-							key={slideKey}
-							style={[
-								styles.circleStyle,
-								{ opacity: slideKey === index ? 1 : 0.5 },
-							]}/>
-					))}
+					{Array(slideTotal)
+						.fill(0)
+						.map((_, slideKey) => (
+							<View
+								key={slideKey}
+								style={[
+									styles.circleStyle,
+									{ opacity: slideKey === index ? 1 : 0.5 },
+								]}
+							/>
+						))}
 				</View>
 				<TouchableOpacity onPress={onNext} disabled={lastSlide}>
-					<Text style={[styles.navigatorStyle, { opacity: lastSlide ? 0.3 : 1 }]}>
+					<Text
+						style={[styles.navigatorStyle, { opacity: lastSlide ? 0.3 : 1 }]}>
 						NEXT
 					</Text>
 				</TouchableOpacity>
