@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
 	logoStyle: {
 		position: 'absolute',
 		top: 60,
+		paddingTop: 20,
 	},
 	textStyle: {
 		position: 'absolute',

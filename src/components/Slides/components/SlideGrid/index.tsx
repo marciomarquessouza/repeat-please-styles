@@ -8,13 +8,14 @@ import {
 } from 'react-native';
 import { MonkeyHead } from '../MonkeyHead';
 import { Slider } from '../Slider';
+import { SkipButton } from '../SkipButton';
 import { RenderSlides } from '../RenderSlides';
 import { ISlideGridProps, ISlideGridState } from './types';
 
-const WIDTH = Dimensions.get('window').width;
-const HEIGHT = Dimensions.get('window').height;
-
 export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
+	WIDTH = Dimensions.get('window').width;
+	HEIGHT = Dimensions.get('window').height;
+
 	constructor(props: ISlideGridProps) {
 		super(props);
 		const position = new Animated.ValueXY();
@@ -28,8 +29,8 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 
 				if (currentPosition > 0) {
 					slidePosition = 0;
-				} else if (currentPosition <= -WIDTH * (slides.length - 1)) {
-					slidePosition = -WIDTH * (slides.length - 1);
+				} else if (currentPosition <= -this.WIDTH * (slides.length - 1)) {
+					slidePosition = -this.WIDTH * (slides.length - 1);
 				}
 
 				position.setValue({
@@ -38,7 +39,7 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 				});
 			},
 			onPanResponderRelease: (_, gesture: PanResponderGestureState) => {
-				const SWIPE_THRESHOLD = WIDTH * 0.1;
+				const SWIPE_THRESHOLD = this.WIDTH * 0.1;
 				const { slides } = this.props;
 				const { index } = this.state;
 
@@ -68,7 +69,7 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 	nextSlide = (): void => {
 		const { slides } = this.props;
 		const slideNumber = this.state.index + 1;
-		const slidePosition = -WIDTH * slideNumber;
+		const slidePosition = -this.WIDTH * slideNumber;
 
 		if (this.state.index === slides.length - 1) return;
 
@@ -78,7 +79,7 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 
 	previousSlide = (): void => {
 		const slideNumber = this.state.index - 1;
-		const slidePosition = -WIDTH * slideNumber;
+		const slidePosition = -this.WIDTH * slideNumber;
 
 		if (this.state.index === 0) return;
 
@@ -88,13 +89,13 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 
 	resetSlide = (): void => {
 		const { index } = this.state;
-		const slidePosition = -WIDTH * index;
+		const slidePosition = -this.WIDTH * index;
 		this.moveSlide({ x: slidePosition, y: 0 });
 		this.setState({ lastPosition: slidePosition });
 	};
 
 	render() {
-		const { slides } = this.props;
+		const { slides, onSkip } = this.props;
 		const { position, panResponder } = this.state;
 
 		return (
@@ -105,14 +106,15 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 							panResponder,
 							slides,
 							position,
-							height: HEIGHT,
-							width: WIDTH,
+							height: this.HEIGHT,
+							width: this.WIDTH,
 						}}
 					/>
 				</View>
+				<SkipButton onSkip={() => console.log('Middle')} />
 				<MonkeyHead
 					index={this.state.index}
-					height={HEIGHT}
+					height={this.HEIGHT}
 					onPress={() => this.nextSlide()}
 				/>
 				<Slider
