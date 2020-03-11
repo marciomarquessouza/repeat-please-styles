@@ -23,12 +23,15 @@ const styles = StyleSheet.create({
 	},
 	titleStyle: {
 		fontFamily: font.title,
-		fontSize: 26,
+		fontSize: 20,
+		textAlign: 'center',
 		paddingBottom: 10,
 	},
 	textStyle: {
-		fontSize: 24,
+		fontSize: 18,
 		fontWeight: '100',
 		flexWrap: 'wrap',
+		textAlign: 'center',
+		paddingHorizontal: 8,
 	},
 });
