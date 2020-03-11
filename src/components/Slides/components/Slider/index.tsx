@@ -13,12 +13,13 @@ interface ISliderProps {
 	slideTotal: number;
 	onBack: () => void;
 	onNext: () => void;
+	onLetStart: () => void;
 }
 
 const WIDTH = Dimensions.get('window').width;
 
 export const Slider = (props: ISliderProps): JSX.Element => {
-	const { index, slideTotal, onBack, onNext } = props;
+	const { index, slideTotal, onBack, onNext, onLetStart } = props;
 	const firstSlide = index === 0;
 	const lastSlide = index === slideTotal - 1;
 
@@ -44,12 +45,17 @@ export const Slider = (props: ISliderProps): JSX.Element => {
 							/>
 						))}
 				</View>
-				<TouchableOpacity onPress={onNext} disabled={lastSlide}>
-					<Text
-						style={[styles.navigatorStyle, { opacity: lastSlide ? 0.3 : 1 }]}>
+				{!lastSlide && <TouchableOpacity onPress={onNext}>
+					<Text style={styles.navigatorStyle}>
 						NEXT
 					</Text>
-				</TouchableOpacity>
+				</TouchableOpacity>}
+				{lastSlide && <TouchableOpacity onPress={onLetStart}>
+					<Text
+						style={styles.navigatorStyle}>
+						LET'S START
+					</Text>
+				</TouchableOpacity>}
 			</View>
 		</View>
 	);
