@@ -95,7 +95,7 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 	};
 
 	render() {
-		const { slides, onSkip } = this.props;
+		const { slides, nextScreen } = this.props;
 		const { position, panResponder } = this.state;
 
 		return (
@@ -111,17 +111,18 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 						}}
 					/>
 				</View>
-				<SkipButton onSkip={() => console.log('Middle')} />
+				<SkipButton onSkip={nextScreen} />
 				<MonkeyHead
 					index={this.state.index}
 					height={this.HEIGHT}
-					onPress={() => this.nextSlide()}
+					onPress={this.nextSlide}
 				/>
 				<Slider
 					slideTotal={slides.length}
 					index={this.state.index}
-					onBack={() => this.previousSlide()}
-					onNext={() => this.nextSlide()}
+					onBack={this.previousSlide}
+					onNext={this.nextSlide}
+					onLetStart={nextScreen}
 				/>
 			</>
 		);

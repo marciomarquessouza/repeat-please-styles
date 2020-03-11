@@ -3,7 +3,7 @@ import { Animated, PanResponderInstance } from 'react-native';
 export interface ISlideGridProps {
 	slides: JSX.Element[];
 	duration: number;
-	onSkip?: () => void;
+	nextScreen: () => void;
 }
 
 export interface ISlideGridState {

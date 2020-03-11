@@ -17,7 +17,9 @@ const slidesContent = [
 	},
 ];
 
+const nextScreen = () => null;
+
 storiesOf('Slides', module)
 	.add('Slide', () => (
-		<Slide {...{ slidesContent }} />
+		<Slide {...{ slidesContent, nextScreen, duration: 800 }} />
 	))

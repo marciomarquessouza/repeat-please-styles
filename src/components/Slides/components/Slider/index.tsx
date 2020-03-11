@@ -13,7 +13,7 @@ interface ISliderProps {
 	slideTotal: number;
 	onBack: () => void;
 	onNext: () => void;
-	onLetStart: () => void;
+	onLetStart?: () => void;
 }
 
 const WIDTH = Dimensions.get('window').width;
@@ -45,17 +45,15 @@ export const Slider = (props: ISliderProps): JSX.Element => {
 							/>
 						))}
 				</View>
-				{!lastSlide && <TouchableOpacity onPress={onNext}>
-					<Text style={styles.navigatorStyle}>
-						NEXT
-					</Text>
-				</TouchableOpacity>}
-				{lastSlide && <TouchableOpacity onPress={onLetStart}>
-					<Text
-						style={styles.navigatorStyle}>
-						LET'S START
-					</Text>
-				</TouchableOpacity>}
+				{!lastSlide ? (
+					<TouchableOpacity onPress={onNext}>
+						<Text style={styles.navigatorStyle}>NEXT</Text>
+					</TouchableOpacity>
+				) : (
+					<TouchableOpacity onPress={onLetStart}>
+						<Text style={styles.navigatorStyle}>LET'S START</Text>
+					</TouchableOpacity>
+				)}
 			</View>
 		</View>
 	);
@@ -84,5 +82,8 @@ const styles = StyleSheet.create({
 	navigatorStyle: {
 		fontFamily: font.title,
 		fontSize: 16,
+		flexWrap: 'wrap',
+		width: 120,
+		textAlign: 'center',
 	},
 });

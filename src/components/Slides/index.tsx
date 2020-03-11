@@ -7,10 +7,14 @@ interface ISlideProps {
 		title: string;
 		text: string;
 	}[];
+	duration: number;
+	nextScreen: () => void;
 }
 
 export const Slide = ({
 	slidesContent: contents,
+	nextScreen,
+	duration,
 }: ISlideProps): JSX.Element | null => {
 	if (contents.length < 3) return null;
 	const slides = [
@@ -18,5 +22,5 @@ export const Slide = ({
 		<Slide02 title={contents[1].title} text={contents[1].text} />,
 		<Slide03 title={contents[2].title} text={contents[2].text} />,
 	];
-	return <SlideGrid {...{ slides, duration: 800 }} />;
+	return <SlideGrid {...{ slides, nextScreen, duration }} />;
 };
