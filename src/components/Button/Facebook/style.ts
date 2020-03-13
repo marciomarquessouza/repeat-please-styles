@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
 	},
 	logoStyle: {
 		position: 'absolute',
-		left: 10,
+		left: 20,
 		top: 10,
 	},
 	textStyle: {
