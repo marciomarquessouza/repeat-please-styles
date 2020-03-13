@@ -4,9 +4,10 @@ import { action } from '@storybook/addon-actions';
 import CenterView from '../CenterView';
 import {
 	ButtonPrimary,
-	ButtonTransparent,
 	ButtonRounded,
-	LinkButton
+	ButtonTransparent,
+	FacebookButton,
+	LinkButton,
 } from '../../../src/components';
 
 storiesOf('Buttons', module)
@@ -40,4 +41,7 @@ storiesOf('Buttons', module)
 ))
 .add('Link Button', () => (
 	<LinkButton onPress={() => action('Button Pressed')}>Link Button</LinkButton>
+))
+.add('Facebook Button', () => (
+	<FacebookButton onPress={() => action('Button Pressed')}>Login with Facebook</FacebookButton>
 ))
