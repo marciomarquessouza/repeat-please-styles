@@ -7,6 +7,7 @@ import {
 	ButtonRounded,
 	ButtonTransparent,
 	FacebookButton,
+	GoogleButton,
 	LinkButton,
 } from '../../../src/components';
 
@@ -44,4 +45,7 @@ storiesOf('Buttons', module)
 ))
 .add('Facebook Button', () => (
 	<FacebookButton onPress={() => action('Button Pressed')}>Login with Facebook</FacebookButton>
+))
+.add('Google Button', () => (
+	<GoogleButton onPress={() => action('Button Pressed')}>Login with Google</GoogleButton>
 ))

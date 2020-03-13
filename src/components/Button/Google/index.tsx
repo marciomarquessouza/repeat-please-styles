@@ -1,25 +1,25 @@
 import React from 'react';
 import { TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { FacebookLogo } from './SVG/FacebookLogo';
+import { GoogleLogo } from './SVG/GoogleLogo';
 import { Text } from 'native-base';
 import { styles } from './style';
 
-export interface IFacebookButtonProps {
+export interface IGoogleButtonProps {
 	children: string;
 	style?: ViewStyle;
 	textStyle?: TextStyle;
 	onPress: () => void;
 }
 
-export const FacebookButton = ({
+export const GoogleButton = ({
 	children,
 	style,
 	textStyle,
 	onPress,
-}: IFacebookButtonProps): JSX.Element => (
-	<View style={[style, styles.container]} data-test="facebookButton">
+}: IGoogleButtonProps): JSX.Element => (
+	<View style={[style, styles.container]} data-test="googleButton">
 		<TouchableOpacity {...{ onPress, style: styles.buttonStyle }}>
-			<FacebookLogo style={styles.logoStyle} />
+			<GoogleLogo style={styles.logoStyle} />
 			<Text style={[textStyle, styles.textStyle]}>{children}</Text>
 		</TouchableOpacity>
 	</View>

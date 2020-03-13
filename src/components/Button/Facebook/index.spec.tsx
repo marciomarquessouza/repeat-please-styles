@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { FacebookButton, IFacebookButtonProps } from './index';
+import { FacebookButton, IFacebookButtonProps } from './';
 import { findByDataTest } from '../../../utils/testUtils';
 
 const defaultProps: IFacebookButtonProps = {
-	children: 'Link Button',
+	children: 'Facebook Button',
 	onPress: () => null,
 };
 
@@ -13,10 +13,10 @@ const setup = (props: IFacebookButtonProps): ShallowWrapper => {
 };
 
 describe('Facebook Button Default Tests', () => {
-	it('should render the FacebookButon component properly', () => {
+	it('should render the Facebook Button component properly', () => {
 		const wrapper = setup(defaultProps);
-		const FacebookBtnComponent = findByDataTest(wrapper, 'facebookButton');
-		expect(FacebookBtnComponent).toHaveLength(1);
-		expect(FacebookBtnComponent).toMatchSnapshot();
+		const facebookBtnComponent = findByDataTest(wrapper, 'facebookButton');
+		expect(facebookBtnComponent).toHaveLength(1);
+		expect(facebookBtnComponent).toMatchSnapshot();
 	});
 });

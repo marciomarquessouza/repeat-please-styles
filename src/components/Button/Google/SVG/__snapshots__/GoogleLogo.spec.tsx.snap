@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Google Logo Default Tests should render the Google Logo component properly 1`] = `ShallowWrapper {}`;
