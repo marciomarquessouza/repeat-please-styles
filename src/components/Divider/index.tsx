@@ -1,25 +1,42 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+	Dimensions,
+	StyleSheet,
+	Text,
+	TextStyle,
+	View,
+	ViewStyle,
+} from 'react-native';
 import { font } from '../../theme';
 
 export interface IDividerProps {
+	borderStyle?: ViewStyle;
+	containerStyle?: ViewStyle;
 	text: string;
+	textStyle?: TextStyle;
 }
 
-export const Divider = ({ text }: IDividerProps): JSX.Element => {
+const WIDTH = Dimensions.get('window').width;
+
+export const Divider = ({
+	borderStyle,
+	containerStyle,
+	text,
+	textStyle,
+}: IDividerProps): JSX.Element => {
 	return (
-		<View style={styles.container} data-test="Divider">
-			<View style={styles.dividerStyle} />
-			<Text style={styles.textStyle}>{text}</Text>
-			<View style={styles.dividerStyle} />
+		<View style={[styles.container, containerStyle]} data-test="Divider">
+			<View style={[styles.dividerStyle, borderStyle]} />
+			<Text style={[styles.textStyle, textStyle]}>{text}</Text>
+			<View style={[styles.dividerStyle, borderStyle]} />
 		</View>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
 		flexDirection: 'row',
+		width: WIDTH,
 		justifyContent: 'space-around',
 		alignItems: 'center',
 	},
