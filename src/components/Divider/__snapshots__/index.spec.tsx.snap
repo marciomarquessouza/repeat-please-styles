@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider Basic Test should render Divider Component properly 1`] = `ShallowWrapper {}`;

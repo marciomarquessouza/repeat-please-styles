@@ -5,4 +5,5 @@ export * from './Typography';
 export * from './Messages';
 export * from './CircularProgress';
 export * from './Slides';
+export * from './Divider';
 export * from '../theme';
