@@ -7,7 +7,7 @@ export interface IGoogleLogoProps {
 }
 
 export const GoogleLogo = (props: IGoogleLogoProps): JSX.Element => (
-	<View {...props}>
+	<View {...props} data-test="googleLogo">
 		<Svg
 			width={30}
 			height={30}

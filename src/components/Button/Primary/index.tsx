@@ -1,31 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ActivityIndicator, TouchableOpacity, Text } from 'react-native';
-import { IBtutton } from '../interface';
+import { IBtuttonProps } from '../types';
 import { styles } from './style';
 
-export class ButtonPrimary extends Component<IBtutton, {}> {
-	render() {
-		const {
-			children,
-			customStyle,
-			onPress,
-			textStyle,
-			isLoading,
-		}: IBtutton = this.props;
-
-		const content = isLoading ? (
+export const ButtonPrimary = ({
+	children,
+	style,
+	onPress,
+	textStyle,
+	isLoading,
+}: IBtuttonProps): JSX.Element => (
+	<TouchableOpacity
+		onPress={onPress}
+		style={[style, styles.buttonStyle]}
+		data-test="buttonPrimary">
+		{isLoading ? (
 			<ActivityIndicator size="large" color="#fff" data-test="loading" />
 		) : (
-			<Text style={[styles.TextStyle, textStyle]}>{children}</Text>
-		);
-
-		return (
-			<TouchableOpacity
-				onPress={onPress}
-				style={[styles.ButtonStyle, customStyle]}
-				data-test="buttonPrimary">
-				{content}
-			</TouchableOpacity>
-		);
-	}
-}
+			<Text style={[styles.textStyle, textStyle]}>{children}</Text>
+		)}
+	</TouchableOpacity>
+);

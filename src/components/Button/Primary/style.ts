@@ -2,14 +2,14 @@ import { StyleSheet } from 'react-native';
 import { font, color } from '../../../theme';
 
 export const styles = StyleSheet.create({
-	ButtonStyle: {
+	buttonStyle: {
 		width: '100%',
 		alignItems: 'center',
 		backgroundColor: color.primary,
 		padding: 10,
 		borderRadius: 10,
 	},
-	TextStyle: {
+	textStyle: {
 		fontFamily: font.primaryLight,
 		fontSize: 22,
 		color: color.white,

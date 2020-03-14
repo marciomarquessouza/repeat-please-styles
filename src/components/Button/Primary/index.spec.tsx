@@ -2,13 +2,13 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { ButtonPrimary } from './index';
 import { findByDataTest } from '../../../utils/testUtils';
-import { IBtutton } from '../interface';
+import { IBtuttonProps } from '../types';
 
-const defaultProps: IBtutton = {
-	children: 'Defaul',
+const defaultProps: IBtuttonProps = {
+	children: 'Primary',
 };
 
-const setup = (props: IBtutton): ShallowWrapper => {
+const setup = (props: IBtuttonProps): ShallowWrapper => {
 	return shallow(<ButtonPrimary {...props}>{props.children}</ButtonPrimary>);
 };
 

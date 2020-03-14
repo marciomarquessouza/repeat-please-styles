@@ -1,14 +1,15 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { GoogleButton, IGoogleButtonProps } from './';
+import { GoogleButton } from './';
 import { findByDataTest } from '../../../utils/testUtils';
+import { IBtuttonProps } from '../types';
 
-const defaultProps: IGoogleButtonProps = {
+const defaultProps: IBtuttonProps = {
 	children: 'Google Button',
 	onPress: () => null,
 };
 
-const setup = (props: IGoogleButtonProps): ShallowWrapper => {
+const setup = (props: IBtuttonProps): ShallowWrapper => {
 	return shallow(<GoogleButton {...props}>{props.children}</GoogleButton>);
 };
 

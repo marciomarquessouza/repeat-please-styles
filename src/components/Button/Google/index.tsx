@@ -1,26 +1,26 @@
 import React from 'react';
-import { TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import { GoogleLogo } from './SVG/GoogleLogo';
 import { Text } from 'native-base';
 import { styles } from './style';
-
-export interface IGoogleButtonProps {
-	children: string;
-	style?: ViewStyle;
-	textStyle?: TextStyle;
-	onPress: () => void;
-}
+import { IBtuttonProps } from '../types';
 
 export const GoogleButton = ({
 	children,
+	isLoading,
+	onPress,
 	style,
 	textStyle,
-	onPress,
-}: IGoogleButtonProps): JSX.Element => (
+}: IBtuttonProps): JSX.Element => (
 	<View style={[style, styles.container]} data-test="googleButton">
-		<TouchableOpacity {...{ onPress, style: styles.buttonStyle }}>
+		<TouchableOpacity
+			{...{ onPress, style: styles.buttonStyle, disabled: isLoading }}>
 			<GoogleLogo style={styles.logoStyle} />
-			<Text style={[textStyle, styles.textStyle]}>{children}</Text>
+			{isLoading ? (
+				<ActivityIndicator size="large" />
+			) : (
+				<Text style={[styles.textStyle, textStyle]}>{children}</Text>
+			)}
 		</TouchableOpacity>
 	</View>
 );

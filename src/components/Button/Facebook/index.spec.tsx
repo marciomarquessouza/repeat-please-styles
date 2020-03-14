@@ -1,14 +1,15 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { FacebookButton, IFacebookButtonProps } from './';
+import { FacebookButton } from './';
 import { findByDataTest } from '../../../utils/testUtils';
+import { IBtuttonProps } from '../types';
 
-const defaultProps: IFacebookButtonProps = {
+const defaultProps: IBtuttonProps = {
 	children: 'Facebook Button',
 	onPress: () => null,
 };
 
-const setup = (props: IFacebookButtonProps): ShallowWrapper => {
+const setup = (props: IBtuttonProps): ShallowWrapper => {
 	return shallow(<FacebookButton {...props}>{props.children}</FacebookButton>);
 };
 

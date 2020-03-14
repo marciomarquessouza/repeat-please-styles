@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import CenterView from '../CenterView';
@@ -44,8 +45,36 @@ storiesOf('Buttons', module)
 	<LinkButton onPress={() => action('Button Pressed')}>Link Button</LinkButton>
 ))
 .add('Facebook Button', () => (
-	<FacebookButton onPress={() => action('Button Pressed')}>Login with Facebook</FacebookButton>
+	<>
+		<Text>Default:</Text>
+		<FacebookButton
+			onPress={() => action('Button Pressed')}
+			style={{ marginVertical: 10 }}>
+			Login with Facebook
+		</FacebookButton>
+		<Text>Loading:</Text>
+		<FacebookButton
+			onPress={() => action('Button Pressed')}
+			style={{ marginVertical: 10 }}
+			isLoading={true}>
+			Login with Facebook
+		</FacebookButton>
+	</>
 ))
 .add('Google Button', () => (
-	<GoogleButton onPress={() => action('Button Pressed')}>Login with Google</GoogleButton>
+	<>
+		<Text>Default:</Text>
+		<GoogleButton
+			onPress={() => action('Button Pressed')}
+			style={{ marginVertical: 10 }}>
+			Login with Google
+		</GoogleButton>
+		<Text>Loading:</Text>
+		<GoogleButton
+			onPress={() => action('Button Pressed')}
+			style={{ marginVertical: 10 }}
+			isLoading={true}>
+			Login with Google
+		</GoogleButton>
+	</>
 ))

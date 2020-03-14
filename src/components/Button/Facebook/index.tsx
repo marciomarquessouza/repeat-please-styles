@@ -1,26 +1,26 @@
 import React from 'react';
-import { TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
 import { FacebookLogo } from './SVG/FacebookLogo';
 import { Text } from 'native-base';
 import { styles } from './style';
-
-export interface IFacebookButtonProps {
-	children: string;
-	style?: ViewStyle;
-	textStyle?: TextStyle;
-	onPress: () => void;
-}
+import { IBtuttonProps } from '../types';
 
 export const FacebookButton = ({
 	children,
 	style,
 	textStyle,
 	onPress,
-}: IFacebookButtonProps): JSX.Element => (
+	isLoading,
+}: IBtuttonProps): JSX.Element => (
 	<View style={[style, styles.container]} data-test="facebookButton">
-		<TouchableOpacity {...{ onPress, style: styles.buttonStyle }}>
+		<TouchableOpacity
+			{...{ onPress, style: styles.buttonStyle, disabled: isLoading }}>
 			<FacebookLogo style={styles.logoStyle} />
-			<Text style={[textStyle, styles.textStyle]}>{children}</Text>
+			{isLoading ? (
+				<ActivityIndicator size="large" color="#fff" />
+			) : (
+				<Text style={[styles.textStyle, textStyle]}>{children}</Text>
+			)}
 		</TouchableOpacity>
 	</View>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IBtutton } from './src/components/Button/interface';
+import { IBtuttonProps } from './src/components/Button/types';
 import { IIconTextInputProps } from './src/components/Input/interface';
 import { ILogo } from './src/components/Logo';
 import { IText } from './src/components/Typography/interface';
@@ -14,15 +14,15 @@ declare module 'repeat-please-styles' {
 	export import TitleLogo = __RepeatPleaseStylesClasses.TitleLogo;
 	export import Title = __RepeatPleaseStylesClasses.Title;
 	export import Body = __RepeatPleaseStylesClasses.Body;
-	export { IBtutton };
+	export { IBtuttonProps };
 	export { IIconTextInputProps };
 	export { ILogo };
 	export { IText };
 }
 
 declare namespace __RepeatPleaseStylesClasses {
-	export class ButtonPrimary extends React.Component<IBtutton> {}
-	export class ButtonTransparent extends React.Component<IBtutton> {}
+	export class ButtonPrimary extends React.Component<IBtuttonProps> {}
+	export class ButtonTransparent extends React.Component<IBtuttonProps> {}
 	export class FloatLabelInput extends React.Component<IIconTextInputProps> {}
 	export class PlaceholderInput extends React.Component<IIconTextInputProps> {}
 	export class Logo extends React.Component<ILogo> {}
