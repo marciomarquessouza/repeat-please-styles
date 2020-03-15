@@ -1,14 +1,6 @@
 import React from 'react';
 import Svg from 'react-native-svg';
-import {
-	Ears,
-	Mouth,
-	EyeBrow,
-	Eyes,
-	Face,
-	Hair,
-	Noose,
-} from './SVG';
+import { Ears, Mouth, EyeBrow, Eyes, Face, Hair, Noose } from './SVG';
 import { View, ViewStyle } from 'react-native';
 
 export enum Mood {

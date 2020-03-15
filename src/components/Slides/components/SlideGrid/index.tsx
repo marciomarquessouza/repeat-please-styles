@@ -6,7 +6,7 @@ import {
 	PanResponderGestureState,
 	View,
 } from 'react-native';
-import { MonkeyHead } from '../MonkeyHead';
+import { MonkeyHeadSlide } from '../MonkeyHeadSlide';
 import { Slider } from '../Slider';
 import { SkipButton } from '../SkipButton';
 import { RenderSlides } from '../RenderSlides';
@@ -112,7 +112,7 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 					/>
 				</View>
 				<SkipButton onSkip={nextScreen} />
-				<MonkeyHead
+				<MonkeyHeadSlide
 					index={this.state.index}
 					height={this.HEIGHT}
 					onPress={this.nextSlide}

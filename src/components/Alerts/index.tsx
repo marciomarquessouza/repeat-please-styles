@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { MonkeyHead, Mood } from '../MonkeyHead';
-import style from 'storybook/stories/CenterView/style';
 
 export interface IAlertsProps {
 	children: string;
@@ -20,17 +19,16 @@ const styles = StyleSheet.create({
 	},
 });
 
-export const Alerts = ({ children }: IAlertsProps): JSX.Element => {
-	return (
-		<View>
-			<Text>{children}</Text>
-			<MonkeyHead {...{
+export const Alerts = ({ children }: IAlertsProps): JSX.Element => (
+	<View>
+		<Text>{children}</Text>
+		<MonkeyHead
+			{...{
 				width,
 				height,
 				style: styles.container,
-				mood: Mood.sad
-			}} />
-		</View>
-	);
-};
-
+				mood: Mood.sad,
+			}}
+		/>
+	</View>
+);
