@@ -1,9 +1,10 @@
-import './Welcome/Welcome.stories';
-import './TextInput/TextInput.stories';
-import './Typography/Typography.stories';
+import './Alerts/Alerts.stories';
 import './Button/Button.stories';
+import './CircularProgress/CircularProgress.stories';
+import './Divider/Divider.stories';
 import './Logos/Logo.stories';
 import './Messages/Messages.stories';
-import './CircularProgress/CircularProgress.stories';
 import './Slides/Slides.stories';
-import './Divider/Divider.stories';
+import './TextInput/TextInput.stories';
+import './Typography/Typography.stories';
+import './Welcome/Welcome.stories';
