@@ -6,6 +6,8 @@ export const color = {
 	white: '#FFF',
 	black: '#000',
 	glass: 'rgba(101, 101, 101, 0.3)',
+	grayPrimary: '#656565',
+	grayLight: '#ABABAB',
 	light: '#F2F2F2',
 	background: '#EBE435',
 	darkBackground: '#FFC300',
