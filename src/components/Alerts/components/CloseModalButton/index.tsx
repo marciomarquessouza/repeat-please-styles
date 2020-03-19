@@ -7,9 +7,12 @@ export interface ICloseModalProps {
 	style?: ViewStyle;
 }
 
-export const CloseModal = ({ onCloseModal, style }: ICloseModalProps): JSX.Element => (
-	<View {...{ style }}>
-		<TouchableOpacity onPress={onCloseModal}>
+export const CloseModal = ({
+	onCloseModal,
+	style,
+}: ICloseModalProps): JSX.Element => (
+	<View {...{ style }} data-test="closeModal">
+		<TouchableOpacity onPress={onCloseModal} data-test="closeModalButton">
 			<View style={styles.circleContainer}>
 				<View style={[styles.xStyle, { transform: [{ rotate: '45deg' }] }]} />
 				<View style={[styles.xStyle, { transform: [{ rotate: '-45deg' }] }]} />
@@ -31,9 +34,9 @@ const styles = StyleSheet.create({
 		width: 16,
 		borderWidth: 1,
 		borderColor: '#fff',
-		justifyContent:'center',
-		alignItems:'center',
-		alignSelf:'center',
-		position:'absolute',
+		justifyContent: 'center',
+		alignItems: 'center',
+		alignSelf: 'center',
+		position: 'absolute',
 	},
-})
+});

@@ -1,21 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import {Modal, Text, View, SafeAreaView, StyleSheet, TouchableWithoutFeedback} from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Animated, Dimensions, SafeAreaView, Text, View } from 'react-native';
 import { MonkeyHeadModal } from './components/MonkeyHeadModal';
 import { CloseModal } from './components/CloseModalButton';
 import { Mood } from '../MonkeyHead';
-import { font } from '../../theme';
+import { styles } from './styles';
 
 export interface IAlertsProps {
 	children: string;
 	type: 'warning' | 'error' | 'success';
+	showAlert: boolean;
+	speed?: number;
 }
 
-export const Alerts = ({ children, type }: IAlertsProps): JSX.Element => {
-	const [ modalVisible, setModalVisible ] = useState(true);
+export interface IPostionXY {
+	x: number;
+	y: number;
+}
+
+const WIDTH = Dimensions.get('window').width;
+
+export const Alerts = ({
+	children,
+	type,
+	showAlert,
+	speed,
+}: IAlertsProps): JSX.Element | null => {
+	const duration = speed || 500;
+	const initialPosition: IPostionXY = { x: 0, y: -120 };
+	const [modalVisible, setModalVisible] = useState(false);
+	const [position] = useState(new Animated.ValueXY(initialPosition));
+
+	const alertAnimation = useCallback(
+		(toValue: IPostionXY): void =>
+			Animated.timing(position, { duration, toValue }).start(),
+		[duration, position],
+	);
+
+	useEffect(() => {
+		if (showAlert) {
+			setModalVisible(true);
+			alertAnimation({ x: 0, y: 10 });
+		}
+	}, [showAlert, alertAnimation]);
 
 	const closeModal = () => {
-		setModalVisible(false);
-	}
+		alertAnimation(initialPosition);
+		setModalVisible(true);
+	};
 
 	let mood: Mood;
 	switch (type) {
@@ -28,50 +59,27 @@ export const Alerts = ({ children, type }: IAlertsProps): JSX.Element => {
 		case 'success':
 			mood = Mood.happy;
 			break;
-	};
+	}
 
-	return (
-		<Modal
-			animationType="slide"
-			transparent={true}
-			visible={modalVisible}>
-				<TouchableWithoutFeedback onPress={closeModal}>
-					<SafeAreaView>
-						<View style={styles.boxStyle}>
-							<MonkeyHeadModal {...{mood}} />
-							<Text style={styles.textStyle}>{children}</Text>
-							<CloseModal
-								onCloseModal={closeModal}
-								style={styles.closeStyle}
-							/>
-						</View>
-					</SafeAreaView>
-				</TouchableWithoutFeedback>
-		</Modal>
+	const alertBox = (
+		<Animated.View
+			style={[
+				styles.container,
+				{
+					left: 0,
+					top: position.y,
+					width: WIDTH,
+				},
+			]}>
+			<SafeAreaView>
+				<View style={styles.boxStyle}>
+					<MonkeyHeadModal {...{ mood }} />
+					<Text style={styles.textStyle}>{children}</Text>
+					<CloseModal onCloseModal={closeModal} style={styles.closeStyle} />
+				</View>
+			</SafeAreaView>
+		</Animated.View>
 	);
-};
 
-const styles = StyleSheet.create({
-	boxStyle: {
-		flexDirection: 'row',
-		borderWidth: 1,
-		borderColor: '#ABABAB',
-		height: 60,
-		borderRadius: 10,
-		marginHorizontal: 20,
-		alignItems: 'center',
-		paddingHorizontal: 10,
-		backgroundColor: "#fff",
-	},
-	textStyle: {
-		fontFamily: font.primary,
-		fontSize: 20,
-		fontWeight: 'bold',
-		paddingHorizontal: 20,
-	},
-	closeStyle: {
-		position: 'absolute',
-		right: 0,
-		marginHorizontal: 20,
-	},
-});
+	return modalVisible ? alertBox : null;
+};

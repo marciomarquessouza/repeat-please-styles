@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { MonkeyHead, Mood } from '../../../MonkeyHead';
 import { color } from '../../../../theme';
 
@@ -8,8 +8,10 @@ export interface IMonkeyHeadModal {
 }
 
 export const MonkeyHeadModal = ({ mood }: IMonkeyHeadModal): JSX.Element => (
-	<View style={styles.circleStyle}>
-		<MonkeyHead {...{mood, width: 33, height: 35, style: styles.monkeyHeadStyle }} />
+	<View style={styles.circleStyle} data-test="monkeyHead">
+		<MonkeyHead
+			{...{ mood, width: 33, height: 35, style: styles.monkeyHeadStyle }}
+		/>
 	</View>
 );
 
