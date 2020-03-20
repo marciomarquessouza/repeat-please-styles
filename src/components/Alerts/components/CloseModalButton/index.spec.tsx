@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { CloseModal, ICloseModalProps } from './';
-import { findByDataTest } from '../../../../utils/testUtils'
+import { findByDataTest } from '../../../../utils/testUtils';
 
 const setup = (props: ICloseModalProps): ShallowWrapper => {
 	return shallow(<CloseModal {...props} />);

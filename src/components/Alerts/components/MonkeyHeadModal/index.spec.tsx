@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { MonkeyHeadModal, IMonkeyHeadModal } from './';
-import { findByDataTest } from '../../../../utils/testUtils'
+import { findByDataTest } from '../../../../utils/testUtils';
 import { Mood } from '../../../MonkeyHead';
 
 const setup = (props: IMonkeyHeadModal): ShallowWrapper => {

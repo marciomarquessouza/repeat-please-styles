@@ -14,8 +14,15 @@
   "tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
   "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
   "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
-  "lint:all": "npx yarn run lint && npx yarn run tslint"
+  "lint:all": "npx yarn run lint && npx yarn run tslint",
+  "report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html "
  },
+ "husky": {
+	"hooks": {
+	 "pre-commit": "yarn lint",
+	 "pre-push": "yarn lint"
+	}
+  },
  "peerDependencies": {
   "native-base": ">= 2.13.8",
   "react": ">= 16.8.6",
@@ -48,8 +55,10 @@
   "eslint": "^6.7.2",
   "eslint-config-prettier": "^6.7.0",
   "eslint-plugin-prettier": "^3.1.1",
+  "husky": "3.1.0",
   "jest": "^24.1.0",
   "metro-react-native-babel-preset": "0.54.1",
+  "mockdate": "^2.0.5",
   "native-base": "^2.13.8",
   "prettier": "^1.19.1",
   "react": "16.8.6",
@@ -71,6 +80,14 @@
   "typescript": "^3.6.3"
  },
  "jest": {
+ "coverageThreshold": {
+	"global": {
+		"statements": 100,
+		"branches": 100,
+		"functions": 100,
+		"lines": 100
+	}
+  },
   "preset": "react-native",
   "setupFiles": [
    "./tests/setup.js"

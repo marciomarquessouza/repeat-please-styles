@@ -2,6 +2,6 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "jsx": "react",
-    "module": "commonjs"
+		"module": "commonjs",
   }
 }
