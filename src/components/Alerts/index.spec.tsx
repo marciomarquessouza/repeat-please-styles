@@ -28,7 +28,7 @@ describe('Alerts', () => {
 	});
 
 	it('should render the component properly if showAlert is off', () => {
-		const tree = setup({ type: 'success', showAlert: false, children: 'Test' });
+		const tree = setup({ type: 'success', showAlert: false, children: 'Wow' });
 		expect(tree.toJSON()).toMatchSnapshot();
 	});
 
