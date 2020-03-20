@@ -1,21 +1,15 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { MessageWarning, IMessageProps } from './';
-import { findByDataTest } from '../../utils/testUtils';
-
-const defaultProps: IMessageProps = {
-	children: 'Message',
-};
-
-const setup = (props: IMessageProps): ShallowWrapper => {
-	return shallow(<MessageWarning {...props} />);
-};
+import { render } from 'react-native-testing-library';
+import { MessageWarning, MessageSuccess } from './';
 
 describe('Messages basic tests', () => {
 	it('should render the warning message properly', () => {
-		const wrapper = setup(defaultProps);
-		const messageWarning = findByDataTest(wrapper, 'warning-message');
-		expect(messageWarning).toHaveLength(1);
-		expect(messageWarning).toMatchSnapshot();
+		const wrapper = render(<MessageWarning>warning</MessageWarning>);
+		expect(wrapper.toJSON()).toMatchSnapshot();
+	});
+
+	it('should render the success message properly', () => {
+		const wrapper = render(<MessageSuccess>warning</MessageSuccess>);
+		expect(wrapper.toJSON()).toMatchSnapshot();
 	});
 });

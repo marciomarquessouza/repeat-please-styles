@@ -20,4 +20,11 @@ describe('Google Button Default Tests', () => {
 		expect(googleBtnComponent).toHaveLength(1);
 		expect(googleBtnComponent).toMatchSnapshot();
 	});
+
+	it('should render the Google Button is loading', () => {
+		const wrapper = setup({ ...defaultProps, isLoading: true });
+		const googleBtnComponent = findByDataTest(wrapper, 'googleButton');
+		expect(googleBtnComponent).toHaveLength(1);
+		expect(googleBtnComponent).toMatchSnapshot();
+	});
 });

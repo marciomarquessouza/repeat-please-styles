@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Transparent Default Tests should render the button components properly 1`] = `ShallowWrapper {}`;
+
+exports[`Button Transparent Default Tests should render the button loading 1`] = `ShallowWrapper {}`;

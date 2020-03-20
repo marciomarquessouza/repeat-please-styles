@@ -17,9 +17,7 @@ export const MessageWarning = ({
 	customImageStyle,
 }: IMessageProps): JSX.Element => {
 	return (
-		<View
-			style={[styles.container, styles.warningStyle, customStyle]}
-			data-test="warning-message">
+		<View style={[styles.container, styles.warningStyle, customStyle]}>
 			<WarningIcon style={[styles.imageStyle, customImageStyle]} />
 			<Text style={[styles.textStyle, customTextStyle]}>{children}</Text>
 		</View>
@@ -33,9 +31,7 @@ export const MessageSuccess = ({
 	customImageStyle,
 }: IMessageProps): JSX.Element => {
 	return (
-		<View
-			style={[styles.container, styles.successStyle, customStyle]}
-			data-test="success-message">
+		<View style={[styles.container, styles.successStyle, customStyle]}>
 			<SuccessIcon style={[styles.imageStyle, customImageStyle]} />
 			<Text style={[styles.textStyle, customTextStyle]}>{children}</Text>
 		</View>

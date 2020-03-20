@@ -9,7 +9,7 @@ export enum Mood {
 	happy = 'happy',
 }
 
-interface IMonkeyHeadProps {
+export interface IMonkeyHeadProps {
 	width?: number;
 	height?: number;
 	mood: Mood;

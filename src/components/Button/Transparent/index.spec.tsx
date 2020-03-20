@@ -17,4 +17,11 @@ describe('Button Transparent Default Tests', () => {
 		expect(buttonTransparent).toHaveLength(1);
 		expect(buttonTransparent).toMatchSnapshot();
 	});
+
+	it('should render the button loading', () => {
+		const wrapper = setup({ children: 'Transparent', isLoading: true });
+		const buttonTransparent = findByDataTest(wrapper, 'buttonTransparent');
+		expect(buttonTransparent).toHaveLength(1);
+		expect(buttonTransparent).toMatchSnapshot();
+	});
 });

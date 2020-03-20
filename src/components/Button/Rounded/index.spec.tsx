@@ -15,4 +15,11 @@ describe('Button Primary Default Tests', () => {
 		expect(buttonRounded).toHaveLength(1);
 		expect(buttonRounded).toMatchSnapshot();
 	});
+
+	it('should render the button components loading', () => {
+		const wrapper = setup({ children: 'Primary', isLoading: true });
+		const buttonRounded = findByDataTest(wrapper, 'buttonRounded');
+		expect(buttonRounded).toHaveLength(1);
+		expect(buttonRounded).toMatchSnapshot();
+	});
 });

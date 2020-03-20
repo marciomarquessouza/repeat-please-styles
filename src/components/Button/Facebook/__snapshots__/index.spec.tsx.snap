@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Facebook Button Default Tests should render the Facebook Button component properly 1`] = `ShallowWrapper {}`;
+
+exports[`Facebook Button Default Tests should render the Facebook Button loading 1`] = `ShallowWrapper {}`;

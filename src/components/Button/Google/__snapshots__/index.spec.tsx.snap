@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Google Button Default Tests should render the Google Button component properly 1`] = `ShallowWrapper {}`;
+
+exports[`Google Button Default Tests should render the Google Button is loading 1`] = `ShallowWrapper {}`;

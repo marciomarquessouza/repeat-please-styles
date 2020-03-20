@@ -20,4 +20,11 @@ describe('Facebook Button Default Tests', () => {
 		expect(facebookBtnComponent).toHaveLength(1);
 		expect(facebookBtnComponent).toMatchSnapshot();
 	});
+
+	it('should render the Facebook Button loading', () => {
+		const wrapper = setup({ ...defaultProps, isLoading: true });
+		const facebookBtnComponent = findByDataTest(wrapper, 'facebookButton');
+		expect(facebookBtnComponent).toHaveLength(1);
+		expect(facebookBtnComponent).toMatchSnapshot();
+	});
 });
