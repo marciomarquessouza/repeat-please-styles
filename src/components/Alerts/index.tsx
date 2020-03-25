@@ -6,10 +6,11 @@ import { Mood } from '../MonkeyHead';
 import { styles } from './styles';
 
 export interface IAlertsProps {
-	children: string;
+	message: string;
 	type: 'warning' | 'error' | 'success';
-	showAlert: boolean;
+	shown: boolean;
 	speed?: number;
+	onCloseModal: () => void;
 }
 
 export interface IPostionXY {
@@ -20,33 +21,30 @@ export interface IPostionXY {
 const WIDTH = Dimensions.get('window').width;
 
 export const Alerts = ({
-	children,
+	message,
 	type,
-	showAlert,
+	shown,
 	speed,
+	onCloseModal,
 }: IAlertsProps): JSX.Element | null => {
 	const duration = speed || 500;
 	const initialPosition: IPostionXY = { x: 0, y: -120 };
-	const [modalVisible, setModalVisible] = useState(false);
+	const finalPosition: IPostionXY = { x: 0, y: 10 };
+	const [modalVisible, setModalVisible] = useState(true);
 	const [position] = useState(new Animated.ValueXY(initialPosition));
 
 	const alertAnimation = useCallback(
-		(toValue: IPostionXY): void =>
-			Animated.timing(position, { duration, toValue }).start(),
+		(toValue: IPostionXY, showModal: boolean): void =>
+			Animated.timing(position, { duration, toValue }).start(
+				() => !showModal && setModalVisible(false),
+			),
 		[duration, position],
 	);
 
 	useEffect(() => {
-		if (showAlert) {
-			setModalVisible(true);
-			alertAnimation({ x: 0, y: 10 });
-		}
-	}, [showAlert, alertAnimation]);
-
-	const closeModal = () => {
-		alertAnimation(initialPosition);
-		setModalVisible(true);
-	};
+		const animationSetup = shown ? finalPosition : initialPosition;
+		alertAnimation(animationSetup, shown);
+	}, [shown, alertAnimation, finalPosition, initialPosition]);
 
 	let mood: Mood;
 	switch (type) {
@@ -74,8 +72,8 @@ export const Alerts = ({
 			<SafeAreaView>
 				<View style={styles.boxStyle}>
 					<MonkeyHeadModal {...{ mood }} />
-					<Text style={styles.textStyle}>{children}</Text>
-					<CloseModal onCloseModal={closeModal} style={styles.closeStyle} />
+					<Text style={styles.textStyle}>{message}</Text>
+					<CloseModal {...{ onCloseModal, style: styles.closeStyle }} />
 				</View>
 			</SafeAreaView>
 		</Animated.View>
