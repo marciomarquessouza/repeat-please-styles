@@ -18,11 +18,11 @@
   "report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html "
  },
  "husky": {
-	"hooks": {
-	 "pre-commit": "npx yarn lint && npx yarn test",
-	 "pre-push": "npx yarn lint && npx yarn test"
-	}
-  },
+  "hooks": {
+   "pre-commit": "npx yarn lint && npx yarn test",
+   "pre-push": "npx yarn lint && npx yarn test"
+  }
+ },
  "peerDependencies": {
   "native-base": ">= 2.13.8",
   "react": ">= 16.8.6",
@@ -61,9 +61,9 @@
   "mockdate": "^2.0.5",
   "native-base": "^2.13.8",
   "prettier": "^1.19.1",
-  "react": "16.8.6",
+  "react": "16.9.0",
   "react-dom": "16.8.6",
-  "react-native": "0.60.5",
+  "react-native": "0.61.0",
   "react-native-gesture-handler": "^1.5.3",
   "react-native-reanimated": "^1.7.0",
   "react-native-redash": "^2.0.0",
@@ -80,13 +80,13 @@
   "typescript": "^3.6.3"
  },
  "jest": {
- "coverageThreshold": {
-	"global": {
-		"statements": 90,
-		"branches": 90,
-		"functions": 90,
-		"lines": 90
-	}
+  "coverageThreshold": {
+   "global": {
+    "statements": 90,
+    "branches": 90,
+    "functions": 90,
+    "lines": 90
+   }
   },
   "preset": "react-native",
   "setupFiles": [
