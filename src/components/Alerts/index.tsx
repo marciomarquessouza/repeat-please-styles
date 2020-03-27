@@ -42,6 +42,7 @@ export const Alerts = ({
 	);
 
 	useEffect(() => {
+		setModalVisible(true);
 		const animationSetup = shown ? finalPosition : initialPosition;
 		alertAnimation(animationSetup, shown);
 	}, [shown, alertAnimation, finalPosition, initialPosition]);
