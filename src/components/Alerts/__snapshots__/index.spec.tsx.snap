@@ -18,15 +18,16 @@ exports[`Alerts should render the component properly a warning message 1`] = `
     <View
       style={
         Object {
-          "alignItems": "center",
+          "alignItems": "flex-start",
           "backgroundColor": "#fff",
           "borderColor": "#ABABAB",
           "borderRadius": 10,
           "borderWidth": 1,
+          "flex": 1,
           "flexDirection": "row",
-          "height": 60,
           "marginHorizontal": 20,
           "paddingHorizontal": 10,
+          "paddingVertical": 10,
         }
       }
     >
@@ -759,10 +760,13 @@ exports[`Alerts should render the component properly a warning message 1`] = `
       <Text
         style={
           Object {
+            "flex": 1,
+            "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
             "fontSize": 20,
             "fontWeight": "bold",
             "paddingHorizontal": 20,
+            "paddingVertical": 5,
           }
         }
       >
@@ -772,9 +776,8 @@ exports[`Alerts should render the component properly a warning message 1`] = `
         data-test="closeModal"
         style={
           Object {
-            "marginHorizontal": 10,
-            "position": "absolute",
-            "right": 0,
+            "justifyContent": "flex-end",
+            "paddingVertical": 6,
           }
         }
       >
@@ -877,15 +880,16 @@ exports[`Alerts should render the component properly an error message 1`] = `
     <View
       style={
         Object {
-          "alignItems": "center",
+          "alignItems": "flex-start",
           "backgroundColor": "#fff",
           "borderColor": "#ABABAB",
           "borderRadius": 10,
           "borderWidth": 1,
+          "flex": 1,
           "flexDirection": "row",
-          "height": 60,
           "marginHorizontal": 20,
           "paddingHorizontal": 10,
+          "paddingVertical": 10,
         }
       }
     >
@@ -1564,10 +1568,13 @@ exports[`Alerts should render the component properly an error message 1`] = `
       <Text
         style={
           Object {
+            "flex": 1,
+            "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
             "fontSize": 20,
             "fontWeight": "bold",
             "paddingHorizontal": 20,
+            "paddingVertical": 5,
           }
         }
       >
@@ -1577,9 +1584,8 @@ exports[`Alerts should render the component properly an error message 1`] = `
         data-test="closeModal"
         style={
           Object {
-            "marginHorizontal": 10,
-            "position": "absolute",
-            "right": 0,
+            "justifyContent": "flex-end",
+            "paddingVertical": 6,
           }
         }
       >
@@ -1682,15 +1688,16 @@ exports[`Alerts should render the component properly an success message 1`] = `
     <View
       style={
         Object {
-          "alignItems": "center",
+          "alignItems": "flex-start",
           "backgroundColor": "#fff",
           "borderColor": "#ABABAB",
           "borderRadius": 10,
           "borderWidth": 1,
+          "flex": 1,
           "flexDirection": "row",
-          "height": 60,
           "marginHorizontal": 20,
           "paddingHorizontal": 10,
+          "paddingVertical": 10,
         }
       }
     >
@@ -2317,10 +2324,13 @@ exports[`Alerts should render the component properly an success message 1`] = `
       <Text
         style={
           Object {
+            "flex": 1,
+            "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
             "fontSize": 20,
             "fontWeight": "bold",
             "paddingHorizontal": 20,
+            "paddingVertical": 5,
           }
         }
       >
@@ -2330,9 +2340,8 @@ exports[`Alerts should render the component properly an success message 1`] = `
         data-test="closeModal"
         style={
           Object {
-            "marginHorizontal": 10,
-            "position": "absolute",
-            "right": 0,
+            "justifyContent": "flex-end",
+            "paddingVertical": 6,
           }
         }
       >
@@ -2435,15 +2444,16 @@ exports[`Alerts should render the component properly if showAlert is off 1`] = `
     <View
       style={
         Object {
-          "alignItems": "center",
+          "alignItems": "flex-start",
           "backgroundColor": "#fff",
           "borderColor": "#ABABAB",
           "borderRadius": 10,
           "borderWidth": 1,
+          "flex": 1,
           "flexDirection": "row",
-          "height": 60,
           "marginHorizontal": 20,
           "paddingHorizontal": 10,
+          "paddingVertical": 10,
         }
       }
     >
@@ -3070,10 +3080,13 @@ exports[`Alerts should render the component properly if showAlert is off 1`] = `
       <Text
         style={
           Object {
+            "flex": 1,
+            "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
             "fontSize": 20,
             "fontWeight": "bold",
             "paddingHorizontal": 20,
+            "paddingVertical": 5,
           }
         }
       >
@@ -3083,9 +3096,8 @@ exports[`Alerts should render the component properly if showAlert is off 1`] = `
         data-test="closeModal"
         style={
           Object {
-            "marginHorizontal": 10,
-            "position": "absolute",
-            "right": 0,
+            "justifyContent": "flex-end",
+            "paddingVertical": 6,
           }
         }
       >
