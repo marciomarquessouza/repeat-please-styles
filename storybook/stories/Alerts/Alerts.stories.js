@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react-native';
 import CenterView from '../CenterView';
 import { Alerts } from '../../../src/components';
 
-let shown = true;
 const onCloseModal = () => {
 	shown = false;
 };
@@ -14,7 +13,7 @@ storiesOf('Alerts', module)
 	<Alerts {...{
 		type: 'error',
 		message: 'No Connection =[',
-		shown,
+		shown: true,
 		onCloseModal
 	}} />
 ))
@@ -22,7 +21,7 @@ storiesOf('Alerts', module)
 	<Alerts {...{
 		type: 'warning',
 		message: 'No Selected Word',
-		shown,
+		shown: true,
 		onCloseModal
 	}} />
 ))
@@ -30,7 +29,7 @@ storiesOf('Alerts', module)
 	<Alerts {...{
 		type: 'success',
 		message: 'Yeep =]',
-		shown,
+		shown: true,
 		onCloseModal
 	}} />
 ))
