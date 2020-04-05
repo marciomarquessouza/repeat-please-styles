@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Placeholder Input must render the component properly 1`] = `
+<TextInput
+  allowFontScaling={true}
+  rejectResponderTermination={true}
+  style={
+    Object {
+      "borderBottomColor": "#000",
+      "borderLeftColor": "transparent",
+      "borderRightColor": "transparent",
+      "borderTopColor": "transparent",
+      "borderWidth": 1,
+      "fontSize": 18,
+      "width": "100%",
+    }
+  }
+  underlineColorAndroid="transparent"
+/>
+`;

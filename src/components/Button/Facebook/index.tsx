@@ -1,7 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native';
 import { FacebookLogo } from './SVG/FacebookLogo';
-import { Text } from 'native-base';
 import { styles } from './style';
 import { IBtuttonProps } from '../types';
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, TouchableOpacity, Text, View } from 'react-native';
 import { GoogleLogo } from './SVG/GoogleLogo';
-import { Text } from 'native-base';
 import { styles } from './style';
 import { IBtuttonProps } from '../types';
 

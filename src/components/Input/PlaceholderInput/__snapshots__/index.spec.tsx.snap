@@ -1,5 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Placeholder Input - Basic Tests should render the component properly 1`] = `ShallowWrapper {}`;
-
-exports[`Placeholder Input - Tests with icon should render the placeholder input with icon 1`] = `ShallowWrapper {}`;

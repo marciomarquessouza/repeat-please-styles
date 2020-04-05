@@ -24,7 +24,6 @@
   }
  },
  "peerDependencies": {
-  "native-base": ">= 2.13.8",
   "react": ">= 16.8.6",
   "react-native": ">= 0.60.5",
   "react-native-reanimated": "^1.7.0",
@@ -59,7 +58,6 @@
   "jest": "^24.1.0",
   "metro-react-native-babel-preset": "0.54.1",
   "mockdate": "^2.0.5",
-  "native-base": "^2.13.8",
   "prettier": "^1.19.1",
   "react": "16.9.0",
   "react-dom": "16.8.6",
@@ -82,10 +80,10 @@
  "jest": {
   "coverageThreshold": {
    "global": {
-    "statements": 90,
-    "branches": 90,
-    "functions": 90,
-    "lines": 90
+    "statements": 85,
+    "branches": 85,
+    "functions": 85,
+    "lines": 85
    }
   },
   "preset": "react-native",
