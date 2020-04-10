@@ -763,8 +763,7 @@ exports[`Alerts should render the component properly a warning message 1`] = `
             "flex": 1,
             "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
-            "fontSize": 20,
-            "fontWeight": "bold",
+            "fontSize": 18,
             "paddingHorizontal": 20,
             "paddingVertical": 5,
           }
@@ -1571,8 +1570,7 @@ exports[`Alerts should render the component properly an error message 1`] = `
             "flex": 1,
             "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
-            "fontSize": 20,
-            "fontWeight": "bold",
+            "fontSize": 18,
             "paddingHorizontal": 20,
             "paddingVertical": 5,
           }
@@ -2327,8 +2325,7 @@ exports[`Alerts should render the component properly an success message 1`] = `
             "flex": 1,
             "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
-            "fontSize": 20,
-            "fontWeight": "bold",
+            "fontSize": 18,
             "paddingHorizontal": 20,
             "paddingVertical": 5,
           }
@@ -3083,8 +3080,7 @@ exports[`Alerts should render the component properly if showAlert is off 1`] = `
             "flex": 1,
             "flexWrap": "wrap",
             "fontFamily": "Oswald-Regular",
-            "fontSize": 20,
-            "fontWeight": "bold",
+            "fontSize": 18,
             "paddingHorizontal": 20,
             "paddingVertical": 5,
           }

@@ -20,8 +20,7 @@ export const styles = StyleSheet.create({
 	},
 	textStyle: {
 		fontFamily: font.primary,
-		fontSize: 20,
-		fontWeight: 'bold',
+		fontSize: 18,
 		paddingHorizontal: 20,
 		paddingVertical: 5,
 		flexWrap: 'wrap',
