@@ -1,3 +1,3 @@
-export * from './Slide01';
-export * from './Slide02';
-export * from './Slide03';
+export * from './SlideLogo';
+export * from './SlideHeader';
+export * from './SlideFooter';

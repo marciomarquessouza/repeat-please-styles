@@ -113,6 +113,7 @@
   "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
  },
  "dependencies": {
-  "moment": "^2.24.0"
+  "moment": "^2.24.0",
+  "react-native-responsive-screen": "^1.4.1"
  }
 }

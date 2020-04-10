@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 
 interface IRenderSlideProps {
-	height: number;
-	width: number;
-	slides: JSX.Element[];
+	height?: number;
+	width?: number;
+	slides: (JSX.Element | null)[];
 	position: Animated.ValueXY;
 	panResponder: PanResponderInstance;
 }

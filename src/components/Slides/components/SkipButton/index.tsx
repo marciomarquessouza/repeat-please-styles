@@ -5,16 +5,21 @@ import {
 	Text,
 	TouchableOpacity,
 	View,
+	ViewStyle,
 } from 'react-native';
 import { font } from '../../../../theme';
 
 interface ISkipButtonProps {
 	onSkip: () => void;
+	style?: ViewStyle;
 }
 
-export const SkipButton = ({ onSkip }: ISkipButtonProps): JSX.Element => {
+export const SkipButton = ({
+	onSkip,
+	style,
+}: ISkipButtonProps): JSX.Element => {
 	return (
-		<SafeAreaView>
+		<SafeAreaView {...{ style }}>
 			<View style={styles.slidePosition}>
 				<TouchableOpacity onPress={onSkip}>
 					<Text style={styles.textDesign}>Skip</Text>
@@ -29,10 +34,10 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'flex-end',
 		paddingRight: 30,
-		paddingTop: 30,
+		paddingTop: 5,
 	},
 	textDesign: {
 		fontFamily: font.primary,
-		fontSize: 21,
+		fontSize: 20,
 	},
 });

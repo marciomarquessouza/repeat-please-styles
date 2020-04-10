@@ -1,26 +1,24 @@
-import React from 'react';
-import { SlideGrid } from './components/SlideGrid';
-import { Slide01, Slide02, Slide03 } from './components/SlidesTemplate';
+import React, { Component } from 'react';
+import { SlideGrid, SlideLogo, SlideHeader, SlideFooter } from './components';
+import { ISlide } from './components/SlideGrid/types';
 
 interface ISlideProps {
-	slidesContent: {
-		title: string;
-		text: string;
-	}[];
+	slides: ISlide[];
 	duration: number;
 	nextScreen: () => void;
 }
 
-export const Slide = ({
-	slidesContent: contents,
-	nextScreen,
-	duration,
-}: ISlideProps): JSX.Element | null => {
-	if (contents.length < 3) return null;
-	const slides = [
-		<Slide01 title={contents[0].title} text={contents[0].text} />,
-		<Slide02 title={contents[1].title} text={contents[1].text} />,
-		<Slide03 title={contents[2].title} text={contents[2].text} />,
-	];
-	return <SlideGrid {...{ slides, nextScreen, duration }} />;
-};
+export class Slide extends Component<ISlideProps, {}> {
+	constructor(props: ISlideProps) {
+		super(props);
+	}
+
+	static Logo = SlideLogo;
+	static Header = SlideHeader;
+	static Footer = SlideFooter;
+
+	render() {
+		const { slides, duration, nextScreen } = this.props;
+		return <SlideGrid {...{ slides, duration, nextScreen }} />;
+	}
+}

@@ -4,16 +4,16 @@ import { Slide } from '../../../src/components/Slides/';
 
 const slidesContent = [
 	{
-		title: "PRONUNCIATION?",
-		text: "Pronunciation is a problem for you? You can improve it with Repeat Pelase!",
+		header: <Slide.Logo />,
+		footer: <Slide.Footer text="Pronunciation is a problem for you? You can improve it with Repeat Pelase! " />,
 	},
 	{
-		title: "HARD WORK!",
-		text: "No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weakeness.",
+		header: <Slide.Header title="HARD WORK!" />,
+		footer: <Slide.Footer text="No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weekeness." />,
 	},
 	{
-		title: "PATH TO SUCCESS!",
-		text: "No more time to left. Let's start now!",
+		header: <Slide.Header title="PATH TO SUCCESS!" />,
+		footer: <Slide.Footer text="No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weekeness." />,
 	},
 ];
 
@@ -21,5 +21,5 @@ const nextScreen = () => null;
 
 storiesOf('Slides', module)
 	.add('Slide', () => (
-		<Slide {...{ slidesContent, nextScreen, duration: 800 }} />
+		<Slide {...{ slides: slidesContent, nextScreen, duration: 800 }} />
 	))

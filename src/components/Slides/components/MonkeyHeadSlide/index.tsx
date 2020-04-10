@@ -14,8 +14,7 @@ export const MonkeyHeadSlide = (props: IMonkeyHeadProps): JSX.Element => {
 	useEffect(() => setIndex(props.index), [props.index]);
 
 	const { height, onPress } = props;
-	const monkeyHeadSize = { width: 252, height: 280 };
-	const top = height / 2 - monkeyHeadSize.height / 2 - 30;
+	const monkeyHeadSize = { width: 252, height };
 
 	let mood: Mood;
 	switch (index) {
@@ -34,7 +33,7 @@ export const MonkeyHeadSlide = (props: IMonkeyHeadProps): JSX.Element => {
 	}
 
 	return (
-		<View style={[styles.monkeyHeadDesign, { top }]}>
+		<View style={styles.monkeyHeadDesign}>
 			<TouchableOpacity onPress={onPress} activeOpacity={1}>
 				<MonkeyHead
 					height={monkeyHeadSize.height}

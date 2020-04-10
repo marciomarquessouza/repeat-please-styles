@@ -4,13 +4,9 @@ import {
 	Dimensions,
 	PanResponder,
 	PanResponderGestureState,
-	View,
 } from 'react-native';
-import { MonkeyHeadSlide } from '../MonkeyHeadSlide';
-import { Slider } from '../Slider';
-import { SkipButton } from '../SkipButton';
-import { RenderSlides } from '../RenderSlides';
 import { ISlideGridProps, ISlideGridState } from './types';
+import { SlideLayout } from './SlideLayout';
 
 export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 	WIDTH = Dimensions.get('window').width;
@@ -95,36 +91,23 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 	};
 
 	render() {
+		const { nextSlide, previousSlide, WIDTH: width } = this;
 		const { slides, nextScreen } = this.props;
-		const { position, panResponder } = this.state;
+		const { position, panResponder, index } = this.state;
 
 		return (
-			<>
-				<View>
-					<RenderSlides
-						{...{
-							panResponder,
-							slides,
-							position,
-							height: this.HEIGHT,
-							width: this.WIDTH,
-						}}
-					/>
-				</View>
-				<SkipButton onSkip={nextScreen} />
-				<MonkeyHeadSlide
-					index={this.state.index}
-					height={this.HEIGHT}
-					onPress={this.nextSlide}
-				/>
-				<Slider
-					slideTotal={slides.length}
-					index={this.state.index}
-					onBack={this.previousSlide}
-					onNext={this.nextSlide}
-					onLetStart={nextScreen}
-				/>
-			</>
+			<SlideLayout
+				{...{
+					index,
+					nextScreen,
+					nextSlide,
+					panResponder,
+					position,
+					previousSlide,
+					slides,
+					width,
+				}}
+			/>
 		);
 	}
 }

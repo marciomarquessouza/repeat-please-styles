@@ -1,7 +1,12 @@
 import { Animated, PanResponderInstance } from 'react-native';
 
+export interface ISlide {
+	header: JSX.Element | null;
+	footer: JSX.Element | null;
+}
+
 export interface ISlideGridProps {
-	slides: JSX.Element[];
+	slides: ISlide[];
 	duration: number;
 	nextScreen: () => void;
 }

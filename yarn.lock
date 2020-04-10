@@ -9573,6 +9573,11 @@ react-native-redash@^2.0.0:
   resolved "https://registry.yarnpkg.com/react-native-redash/-/react-native-redash-2.0.0.tgz#e91f7c87dba8687c1f18fd62e2caf1e618b6231c"
   integrity sha512-1EKQr3KsOuG0OpMyXWQks9Wk3tO/s89goWo1Acxv8/x6ETSiYLjI+yrgehffSGa2e9zaXhG05tXnKWV0oiYa+w==
 
+react-native-responsive-screen@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-responsive-screen/-/react-native-responsive-screen-1.4.1.tgz#0270bc8f03a208b578299c1594495db69aff506b"
+  integrity sha512-WuMkVyCPeepzKQaT3N+mbUAvQLL0jGsBnGf6yDtA7vyA/sp1imXYVPYjCNMRaKV+PSM5GzEMXxl4Bj+tUpD2Tw==
+
 react-native-svg@^9.13.6:
   version "9.13.6"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-9.13.6.tgz#5365fba2bc460054b90851e71f2a71006a5d373f"
