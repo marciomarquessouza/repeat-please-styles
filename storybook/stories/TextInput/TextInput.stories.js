@@ -1,10 +1,10 @@
 import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
-import CenterView from '../CenterView';
 import { PlaceholderInput } from '../../../src/components/Input';
 
 storiesOf('Text Input', module)
-	.addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+	.addDecorator(getStory => <View style={styles.container}>{getStory()}</View>)
 	.add('Placeholder Input', () => (
 		<PlaceholderInput
 			keyboardType="email-address"
@@ -20,3 +20,11 @@ storiesOf('Text Input', module)
 			returnKeyType='done'
 		/>
 	));
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		height: '100%',
+		justifyContent: 'center',
+	},
+});

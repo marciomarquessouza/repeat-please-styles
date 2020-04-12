@@ -1,7 +1,20 @@
 import React from 'react';
-import { TextInput, TextInputProps } from 'react-native';
+import {
+	TextInput,
+	TextInputProps,
+	TextStyle,
+	View,
+	ViewStyle,
+} from 'react-native';
 import { styles } from './style';
 
-export const PlaceholderInput = (props: TextInputProps) => (
-	<TextInput {...{ style: styles.inputStyle, ...props }} />
+interface IPlaceHolderInput extends TextInputProps {
+	style?: ViewStyle;
+	textstyle?: TextStyle;
+}
+
+export const PlaceholderInput = (props: IPlaceHolderInput) => (
+	<View style={props.style}>
+		<TextInput {...{ style: [styles.inputStyle, props.textstyle], ...props }} />
+	</View>
 );
