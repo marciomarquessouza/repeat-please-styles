@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { PlaceholderInput } from '../../../src/components/Input';
 
 storiesOf('Text Input', module)
-	.addDecorator(getStory => <View style={styles.container}>{getStory()}</View>)
+	.addDecorator(getStory => <KeyboardAvoidingView style={styles.container}>{getStory()}</KeyboardAvoidingView>)
 	.add('Placeholder Input', () => (
 		<PlaceholderInput
 			keyboardType="email-address"
