@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 	},
 	headStyle: {
-		fontSize: 48,
+		fontSize: 38,
 		fontWeight: 'bold',
 		color: '#656565',
 	},
 	subHeadStyle: {
-		fontSize: 24,
+		fontSize: 21,
 		fontWeight: 'bold',
 		color: '#656565',
 	},

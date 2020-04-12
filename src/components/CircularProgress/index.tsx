@@ -11,6 +11,7 @@ import { color } from '../../theme';
 import { styles } from './styles';
 import { MonkeyHead } from './components/MonkeyHead';
 import { TextChart } from './components/TextChart';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 const { width } = Dimensions.get('window');
 
@@ -107,7 +108,7 @@ export class CircularProgress extends Component<
 					}}
 				/>
 				<CircleBase
-					radius={radius - (barWidth || 50)}
+					radius={radius - (barWidth || wp('10%'))}
 					color={white}
 					size={size}
 					customStyle={styles.overlayContainer}
