@@ -4,6 +4,9 @@ import { color } from '../../theme';
 const androidPadding = Platform.OS === 'android' ? { paddingBottom: 0 } : null;
 
 export const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+	},
 	inputStyle: {
 		fontSize: 18,
 		borderWidth: 1,

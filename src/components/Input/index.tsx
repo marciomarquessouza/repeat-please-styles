@@ -14,7 +14,7 @@ interface IPlaceHolderInput extends TextInputProps {
 }
 
 export const PlaceholderInput = (props: IPlaceHolderInput) => (
-	<View style={props.style}>
+	<View style={[styles.container, props.style]}>
 		<TextInput {...{ style: [styles.inputStyle, props.textstyle], ...props }} />
 	</View>
 );
