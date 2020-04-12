@@ -1,5 +1,6 @@
 export * from './Alerts';
 export * from './Button';
+export * from './Card';
 export * from './CircularProgress';
 export * from './Divider';
 export * from './Input';

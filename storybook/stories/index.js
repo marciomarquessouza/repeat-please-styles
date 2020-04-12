@@ -1,5 +1,6 @@
 import './Alerts/Alerts.stories';
 import './Button/Button.stories';
+import './Card/Card.stories';
 import './CircularProgress/CircularProgress.stories';
 import './Divider/Divider.stories';
 import './Logos/Logo.stories';
