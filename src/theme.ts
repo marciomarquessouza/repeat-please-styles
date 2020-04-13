@@ -13,6 +13,8 @@ export const color = {
 	darkBackground: '#FFC300',
 	transparent: 'transparent',
 	lightText: '#656565',
+	vowel: '#EBD935',
+	consonant: '#FFC300',
 };
 
 export const font = {

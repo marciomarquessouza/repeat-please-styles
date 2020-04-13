@@ -4,6 +4,7 @@ export * from './Card';
 export * from './CircularProgress';
 export * from './Divider';
 export * from './Input';
+export * from './IconsIPA';
 export * from './Logo';
 export * from './Messages';
 export * from './Slides';
