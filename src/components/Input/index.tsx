@@ -9,12 +9,18 @@ import {
 import { styles } from './style';
 
 interface IPlaceHolderInput extends TextInputProps {
-	style?: ViewStyle;
+	viewStyle?: ViewStyle;
 	textstyle?: TextStyle;
 }
 
 export const PlaceholderInput = (props: IPlaceHolderInput) => (
 	<View style={[styles.container, props.style]}>
-		<TextInput {...{ style: [styles.inputStyle, props.textstyle], ...props }} />
+		<TextInput
+			{...{
+				style: [styles.inputStyle, props.textstyle],
+				placeholderTextColor: '#000',
+				...props,
+			}}
+		/>
 	</View>
 );

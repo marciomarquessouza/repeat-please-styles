@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
 		flex: 1,
 	},
 	inputStyle: {
-		fontSize: 18,
+		fontSize: 16,
 		borderWidth: 1,
 		borderRightColor: color.transparent,
 		borderLeftColor: color.transparent,

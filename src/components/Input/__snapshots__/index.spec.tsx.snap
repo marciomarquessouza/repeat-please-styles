@@ -13,6 +13,7 @@ exports[`Placeholder Input must render the component properly 1`] = `
 >
   <TextInput
     allowFontScaling={true}
+    placeholderTextColor="#000"
     rejectResponderTermination={true}
     style={
       Array [
@@ -22,7 +23,7 @@ exports[`Placeholder Input must render the component properly 1`] = `
           "borderRightColor": "transparent",
           "borderTopColor": "transparent",
           "borderWidth": 1,
-          "fontSize": 18,
+          "fontSize": 16,
         },
         undefined,
       ]
