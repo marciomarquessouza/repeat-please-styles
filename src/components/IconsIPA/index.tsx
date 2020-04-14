@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		width: wp('20%'),
 		height: wp('20%'),
-		borderColor: color.grayPrimary,
+		borderColor: color.black,
 		borderWidth: 4,
 		borderRadius: wp('10%'),
 	},
 	textStyle: {
 		fontSize: 36,
-		color: color.grayPrimary,
+		color: color.black,
 		lineHeight: 60,
 	},
 });

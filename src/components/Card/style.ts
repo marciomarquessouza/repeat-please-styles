@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { font } from '../../theme';
+import { font, color } from '../../theme';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const styles = StyleSheet.create({
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
 	labelStyle: {
 		fontFamily: font.primary,
 		fontSize: 18,
-		color: '#656565',
+		color: color.black,
 		marginLeft: 5,
 		marginRight: 10,
 	},

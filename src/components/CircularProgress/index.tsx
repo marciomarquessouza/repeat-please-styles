@@ -69,7 +69,7 @@ export class CircularProgress extends Component<
 
 	render() {
 		const { lateralMargin, barWidth, progress } = this.props;
-		const { background, light, white, lightText } = color;
+		const { background, light, white, black } = color;
 		const size = width - 2 * (lateralMargin || 65);
 		const radius = size / 2;
 		const rotateLine = this.lineAnimation.interpolate({
@@ -104,7 +104,7 @@ export class CircularProgress extends Component<
 						rotateLine,
 						size,
 						customStyle: styles.overlayContainer,
-						color: lightText,
+						color: black,
 					}}
 				/>
 				<CircleBase

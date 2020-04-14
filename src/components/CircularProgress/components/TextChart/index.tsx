@@ -4,6 +4,7 @@ import {
 	animationFactory,
 	IAnimationFactory,
 } from '../../../../animation/animationFactory';
+import { color } from '../../../../theme';
 
 interface ITextChartProps {
 	duration: number;
@@ -77,11 +78,11 @@ const styles = StyleSheet.create({
 	headStyle: {
 		fontSize: 38,
 		fontWeight: 'bold',
-		color: '#656565',
+		color: color.black,
 	},
 	subHeadStyle: {
 		fontSize: 21,
 		fontWeight: 'bold',
-		color: '#656565',
+		color: color.black,
 	},
 });
