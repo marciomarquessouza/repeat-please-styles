@@ -36,7 +36,7 @@ exports[`Alerts should render the component properly a warning message 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#EBE435",
+            "backgroundColor": "#FBEA0D",
             "borderColor": "#656565",
             "borderRadius": 22.5,
             "borderWidth": 2,
@@ -897,7 +897,7 @@ exports[`Alerts should render the component properly an error message 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#EBE435",
+            "backgroundColor": "#FBEA0D",
             "borderColor": "#656565",
             "borderRadius": 22.5,
             "borderWidth": 2,
@@ -1704,7 +1704,7 @@ exports[`Alerts should render the component properly an success message 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#EBE435",
+            "backgroundColor": "#FBEA0D",
             "borderColor": "#656565",
             "borderRadius": 22.5,
             "borderWidth": 2,
@@ -2459,7 +2459,7 @@ exports[`Alerts should render the component properly if showAlert is off 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#EBE435",
+            "backgroundColor": "#FBEA0D",
             "borderColor": "#656565",
             "borderRadius": 22.5,
             "borderWidth": 2,
