@@ -35,9 +35,11 @@ export const Alerts = ({
 
 	const alertAnimation = useCallback(
 		(toValue: IPostionXY, showModal: boolean): void =>
-			Animated.timing(position, { duration, toValue }).start(
-				() => !showModal && setModalVisible(false),
-			),
+			Animated.timing(position, {
+				duration,
+				toValue,
+				useNativeDriver: true,
+			}).start(() => !showModal && setModalVisible(false)),
 		[duration, position],
 	);
 

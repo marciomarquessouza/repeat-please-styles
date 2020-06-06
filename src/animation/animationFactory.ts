@@ -16,6 +16,7 @@ export const animationFactory = (animations: IAnimationFactory[]) => {
 		toValue,
 		duration,
 		easing,
+		useNativeDriver: true,
 	}).start(() => {
 		callback && callback();
 		animations.shift();

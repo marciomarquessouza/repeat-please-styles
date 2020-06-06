@@ -59,7 +59,11 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 
 	moveSlide = (toValue: { x: number; y: number }): void => {
 		const { duration } = this.props;
-		Animated.timing(this.state.position, { toValue, duration }).start();
+		Animated.timing(this.state.position, {
+			toValue,
+			duration,
+			useNativeDriver: true,
+		}).start();
 	};
 
 	nextSlide = (): void => {
