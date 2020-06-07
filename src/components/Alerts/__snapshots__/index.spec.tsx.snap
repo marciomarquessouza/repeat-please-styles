@@ -7,6 +7,11 @@ exports[`Alerts should render the component properly a warning message 1`] = `
       "left": 0,
       "position": "absolute",
       "top": -120,
+      "transform": Array [
+        Object {
+          "translateY": 0,
+        },
+      ],
       "width": 750,
       "zIndex": 9,
     }
@@ -868,6 +873,11 @@ exports[`Alerts should render the component properly an error message 1`] = `
       "left": 0,
       "position": "absolute",
       "top": -120,
+      "transform": Array [
+        Object {
+          "translateY": 0,
+        },
+      ],
       "width": 750,
       "zIndex": 9,
     }
@@ -1675,6 +1685,11 @@ exports[`Alerts should render the component properly an success message 1`] = `
       "left": 0,
       "position": "absolute",
       "top": -120,
+      "transform": Array [
+        Object {
+          "translateY": 0,
+        },
+      ],
       "width": 750,
       "zIndex": 9,
     }
@@ -2430,6 +2445,11 @@ exports[`Alerts should render the component properly if showAlert is off 1`] = `
       "left": 0,
       "position": "absolute",
       "top": -120,
+      "transform": Array [
+        Object {
+          "translateY": 0,
+        },
+      ],
       "width": 750,
       "zIndex": 9,
     }

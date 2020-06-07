@@ -29,9 +29,9 @@ export const Alerts = ({
 }: IAlertsProps): JSX.Element | null => {
 	const duration = speed || 500;
 	const initialPosition: IPostionXY = { x: 0, y: -120 };
-	const finalPosition: IPostionXY = { x: 0, y: 10 };
+	const finalPosition: IPostionXY = { x: 0, y: 140 };
 	const [modalVisible, setModalVisible] = useState(true);
-	const [position] = useState(new Animated.ValueXY(initialPosition));
+	const [position] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
 
 	const alertAnimation = useCallback(
 		(toValue: IPostionXY, showModal: boolean): void =>
@@ -68,8 +68,9 @@ export const Alerts = ({
 				styles.container,
 				{
 					left: 0,
-					top: position.y,
+					top: initialPosition.y,
 					width: WIDTH,
+					transform: [{ translateY: position.y }],
 				},
 			]}>
 			<SafeAreaView>
