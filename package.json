@@ -1,121 +1,121 @@
 {
- "name": "repeat-please-styles",
- "version": "0.0.1",
- "private": false,
- "main": "./module.ts",
- "mappings": "./index.d.ts",
- "scripts": {
-  "start": "react-native start",
-  "android": "react-native run-android",
-  "ios": "react-native run-ios",
-  "test": "jest --coverage",
-  "storybook": "start-storybook -p 7007",
-  "lint": "npx yarn run lint:js && npx yarn run lint:ts",
-  "tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
-  "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
-  "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
-  "lint:all": "npx yarn run lint && npx yarn run tslint",
-  "report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html "
- },
- "husky": {
-  "hooks": {
-   "pre-commit": "npx yarn lint && npx yarn test",
-   "pre-push": "npx yarn lint && npx yarn test"
-  }
- },
- "peerDependencies": {
-  "react": ">= 16.8.6",
-  "react-native": ">= 0.60.5",
-  "react-native-reanimated": "^1.7.0",
-  "react-native-svg": ">= 9.13.6",
-  "react-native-vector-icons": ">= 6.6.0",
-  "react-native-linear-gradient": "^2.5.6"
- },
- "devDependencies": {
-  "@babel/core": "^7.5.0",
-  "@babel/runtime": "^7.5.0",
-  "@react-native-community/eslint-config": "0.0.5",
-  "@storybook/addon-actions": "^5.3.17",
-  "@storybook/addon-links": "^5.3.17",
-  "@storybook/addons": "^5.3.17",
-  "@storybook/react-native": "^5.3.17",
-  "@storybook/react-native-server": "^5.3.17",
-  "@types/enzyme": "^3.10.4",
-  "@types/enzyme-adapter-react-16": "^1.0.5",
-  "@types/jest": "^24.0.18",
-  "@types/react": "^16.9.2",
-  "@types/react-dom": "^16.9.4",
-  "@types/react-native": "^0.60.14",
-  "@types/react-test-renderer": "^16.9.0",
-  "@types/styled-components": "^4.4.0",
-  "babel-jest": "^24.1.0",
-  "babel-loader": "^8.0.6",
-  "enzyme": "^3.10.0",
-  "enzyme-adapter-react-16": "^1.15.1",
-  "eslint": "^6.7.2",
-  "eslint-config-prettier": "^6.7.0",
-  "eslint-plugin-prettier": "^3.1.1",
-  "husky": "3.1.0",
-  "jest": "^24.1.0",
-  "metro-react-native-babel-preset": "0.54.1",
-  "mockdate": "^2.0.5",
-  "prettier": "^1.19.1",
-  "react": "16.9.0",
-  "react-dom": "16.8.6",
-  "react-native": "0.61.5",
-  "react-native-gesture-handler": "^1.5.3",
-  "react-native-reanimated": "^1.7.0",
-  "react-native-redash": "^2.0.0",
-  "react-native-svg": "^9.13.6",
-  "react-native-testing-library": "^1.12.0",
-  "react-native-vector-icons": "^6.6.0",
-  "react-test-renderer": "16.8.6",
-  "styled-components": "^5.0.0",
-  "ts-jest": "^24.2.0",
-  "tslint": "^5.20.1",
-  "tslint-config-prettier": "^1.18.0",
-  "tslint-config-standard": "^9.0.0",
-  "tslint-react": "^4.1.0",
-  "typescript": "^3.6.3"
- },
- "jest": {
-  "coverageThreshold": {
-   "global": {
-    "statements": 85,
-    "branches": 85,
-    "functions": 85,
-    "lines": 85
-   }
-  },
-  "preset": "react-native",
-  "setupFiles": [
-   "./tests/setup.js"
-  ],
-  "transformIgnorePatterns": [
-   "/node_modules/(?!native-base)/"
-  ],
-  "transform": {
-   "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-   "\\.(ts|tsx)$": "ts-jest"
-  },
-  "globals": {
-   "ts-jest": {
-    "tsConfig": "tsconfig.jest.json"
-   }
-  },
-  "moduleFileExtensions": [
-   "ts",
-   "tsx",
-   "js",
-   "jsx",
-   "json",
-   "node"
-  ],
-  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
- },
- "dependencies": {
-  "@types/react-native-vector-icons": "^6.4.5",
-  "moment": "^2.24.0",
-  "react-native-responsive-screen": "^1.4.1"
- }
+	"name": "repeat-please-styles",
+	"version": "0.0.1",
+	"private": false,
+	"main": "./module.ts",
+	"mappings": "./index.d.ts",
+	"scripts": {
+		"start": "react-native start",
+		"android": "react-native run-android",
+		"ios": "react-native run-ios",
+		"test": "jest --coverage",
+		"storybook": "start-storybook -p 7007",
+		"lint": "npx yarn run lint:js && npx yarn run lint:ts",
+		"tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
+		"lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
+		"lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
+		"lint:all": "npx yarn run lint && npx yarn run tslint",
+		"report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html "
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npx yarn lint && npx yarn test",
+			"pre-push": "npx yarn lint && npx yarn test"
+		}
+	},
+	"peerDependencies": {
+		"react": ">= 16.8.6",
+		"react-native": ">= 0.60.5",
+		"react-native-reanimated": "^1.7.0",
+		"react-native-svg": ">= 9.13.6",
+		"react-native-vector-icons": ">= 6.6.0",
+		"react-native-linear-gradient": "^2.5.6"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/runtime": "^7.6.2",
+		"@react-native-community/eslint-config": "0.0.5",
+		"@storybook/addon-actions": "^5.3.17",
+		"@storybook/addon-links": "^5.3.17",
+		"@storybook/addons": "^5.3.17",
+		"@storybook/react-native": "^5.3.17",
+		"@storybook/react-native-server": "^5.3.17",
+		"@types/enzyme": "^3.10.4",
+		"@types/enzyme-adapter-react-16": "^1.0.5",
+		"@types/jest": "^24.0.18",
+		"@types/react": "^16.9.2",
+		"@types/react-dom": "^16.9.4",
+		"@types/react-native": "^0.60.14",
+		"@types/react-test-renderer": "^16.9.0",
+		"@types/styled-components": "^4.4.0",
+		"babel-jest": "^24.9.0",
+		"babel-loader": "^8.0.6",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.15.1",
+		"eslint": "^6.7.2",
+		"eslint-config-prettier": "^6.7.0",
+		"eslint-plugin-prettier": "^3.1.1",
+		"husky": "3.1.0",
+		"jest": "^24.9.0",
+		"metro-react-native-babel-preset": "0.58.0",
+		"mockdate": "^2.0.5",
+		"prettier": "^1.19.1",
+		"react": "16.11.0",
+		"react-dom": "16.8.6",
+		"react-native": "0.62.2",
+		"react-native-gesture-handler": "^1.5.3",
+		"react-native-reanimated": "^1.7.0",
+		"react-native-redash": "^2.0.0",
+		"react-native-svg": "^9.13.6",
+		"react-native-testing-library": "^1.12.0",
+		"react-native-vector-icons": "^6.6.0",
+		"react-test-renderer": "16.11.0",
+		"styled-components": "^5.0.0",
+		"ts-jest": "^24.2.0",
+		"tslint": "^5.20.1",
+		"tslint-config-prettier": "^1.18.0",
+		"tslint-config-standard": "^9.0.0",
+		"tslint-react": "^4.1.0",
+		"typescript": "^3.6.3"
+	},
+	"jest": {
+		"coverageThreshold": {
+			"global": {
+				"statements": 85,
+				"branches": 85,
+				"functions": 85,
+				"lines": 85
+			}
+		},
+		"preset": "react-native",
+		"setupFiles": [
+			"./tests/setup.js"
+		],
+		"transformIgnorePatterns": [
+			"/node_modules/(?!native-base)/"
+		],
+		"transform": {
+			"^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+			"\\.(ts|tsx)$": "ts-jest"
+		},
+		"globals": {
+			"ts-jest": {
+				"tsConfig": "tsconfig.jest.json"
+			}
+		},
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
+	},
+	"dependencies": {
+		"@types/react-native-vector-icons": "^6.4.5",
+		"moment": "^2.24.0",
+		"react-native-responsive-screen": "^1.4.1"
+	}
 }
