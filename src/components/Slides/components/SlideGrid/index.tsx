@@ -17,6 +17,7 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 		const position = new Animated.ValueXY();
 		const panResponder = PanResponder.create({
 			onStartShouldSetPanResponder: () => true,
+			onMoveShouldSetPanResponder: () => true,
 			onPanResponderMove: (_, gesture: PanResponderGestureState) => {
 				const { slides } = this.props;
 				const { lastPosition } = this.state;
@@ -33,6 +34,8 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 					x: slidePosition,
 					y: 0,
 				});
+
+				return true;
 			},
 			onPanResponderRelease: (_, gesture: PanResponderGestureState) => {
 				const SWIPE_THRESHOLD = this.WIDTH * 0.1;
@@ -46,6 +49,8 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 				} else {
 					this.resetSlide();
 				}
+
+				return true;
 			},
 		});
 
@@ -57,13 +62,13 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 		};
 	}
 
-	moveSlide = (toValue: { x: number; y: number }): void => {
+	moveSlide = (toValue: { x: number; y: number }) => {
 		const { duration } = this.props;
-		Animated.timing(this.state.position, {
+		return Animated.timing(this.state.position, {
 			toValue,
 			duration,
-			useNativeDriver: true,
-		}).start();
+			useNativeDriver: false,
+		});
 	};
 
 	nextSlide = (): void => {
@@ -73,8 +78,9 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 
 		if (this.state.index === slides.length - 1) return;
 
-		this.moveSlide({ x: slidePosition, y: 0 });
-		this.setState({ index: slideNumber, lastPosition: slidePosition });
+		this.moveSlide({ x: slidePosition, y: 0 }).start(() => {
+			this.setState({ index: slideNumber, lastPosition: slidePosition });
+		});
 	};
 
 	previousSlide = (): void => {
@@ -83,15 +89,17 @@ export class SlideGrid extends Component<ISlideGridProps, ISlideGridState> {
 
 		if (this.state.index === 0) return;
 
-		this.moveSlide({ x: slidePosition, y: 0 });
-		this.setState({ index: slideNumber, lastPosition: slidePosition });
+		this.moveSlide({ x: slidePosition, y: 0 }).start(() => {
+			this.setState({ index: slideNumber, lastPosition: slidePosition });
+		});
 	};
 
 	resetSlide = (): void => {
 		const { index } = this.state;
 		const slidePosition = -this.WIDTH * index;
-		this.moveSlide({ x: slidePosition, y: 0 });
-		this.setState({ lastPosition: slidePosition });
+		this.moveSlide({ x: slidePosition, y: 0 }).start(() => {
+			this.setState({ lastPosition: slidePosition });
+		});
 	};
 
 	render() {

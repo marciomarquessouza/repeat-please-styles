@@ -28,18 +28,19 @@ export const SlideLayout = ({
 }: ISlideLayoutProps) => (
 	<View style={styles.wrapper}>
 		<SkipButton onSkip={nextScreen} style={styles.skipContainer} />
-		<View style={styles.slideContainer}>
+		<Animated.View
+			style={[styles.slideContainer]}
+			{...panResponder.panHandlers}>
 			<View style={styles.headerSlideContainer}>
 				<RenderSlides
 					{...{
-						panResponder,
 						slides: slides.map(slide => slide.header),
 						position,
 						width,
 					}}
 				/>
 			</View>
-			<View style={styles.middleSlideContainer}>
+			<View style={[styles.middleSlideContainer, { zIndex: -10 }]}>
 				<MonkeyHeadSlide
 					{...{
 						index,
@@ -51,14 +52,13 @@ export const SlideLayout = ({
 			<View style={styles.botomSlideContainer}>
 				<RenderSlides
 					{...{
-						panResponder,
 						slides: slides.map(slide => slide.footer),
 						position,
 						width,
 					}}
 				/>
 			</View>
-		</View>
+		</Animated.View>
 		<View style={styles.sliderContainer}>
 			<Slider
 				slideTotal={slides.length}

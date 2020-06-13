@@ -1,22 +1,15 @@
 import React from 'react';
-import {
-	Animated,
-	PanResponderInstance,
-	StyleSheet,
-	Text,
-	View,
-} from 'react-native';
+import { Animated, StyleSheet, Text, View } from 'react-native';
 
 interface IRenderSlideProps {
 	height?: number;
-	width?: number;
+	width: number;
 	slides: (JSX.Element | null)[];
 	position: Animated.ValueXY;
-	panResponder: PanResponderInstance;
 }
 
 export const RenderSlides = (props: IRenderSlideProps): JSX.Element => {
-	const { slides, width, height, panResponder, position } = props;
+	const { slides, width, height, position } = props;
 	const slidesPanel: JSX.Element[] = [];
 
 	if (!slides.length)
@@ -36,10 +29,10 @@ export const RenderSlides = (props: IRenderSlideProps): JSX.Element => {
 		<Animated.View
 			style={{
 				flex: 1,
+				width: 3 * width,
 				flexDirection: 'row',
-				left: position.x,
-			}}
-			{...panResponder.panHandlers}>
+				transform: [{ translateX: position.x }],
+			}}>
 			{slidesPanel}
 		</Animated.View>
 	);
