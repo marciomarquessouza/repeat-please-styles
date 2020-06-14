@@ -201,6 +201,7 @@ dependencies {
     }
 }
 
+// Added to solve Android Crash in old versions
 configurations.all {
     resolutionStrategy {
         force "com.facebook.soloader:soloader:0.8.2"
