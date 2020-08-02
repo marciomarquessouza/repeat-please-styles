@@ -1,24 +1,9 @@
-import React, { Component, createContext } from 'react';
-import { SlideGrid, SlideLogo, SlideHeader, SlideFooter } from './components';
-import { ISlide } from './components/SlideGrid/types';
-
-interface ILabels {
-	backLabel: string;
-	nextLabel: string;
-	startLabel: string;
-	skipLabel: string;
-}
-
-interface ISlideProps {
-	slides: ISlide[];
-	duration: number;
-	nextScreen: () => void;
-	labels: ILabels;
-}
-
-interface ISlideState {
-	labels: ILabels;
-}
+import React, { createContext, useState, useEffect } from 'react';
+import { SlideGrid } from './components/SlideGrid';
+import { SlideHeader } from './components/SlidesTemplate/SlideHeader';
+import { SlideFooter } from './components/SlidesTemplate/SlideFooter';
+import { SlideLogo } from './components/SlidesTemplate/SlideLogo';
+import { ILabels, ISlideProps } from './interface';
 
 const defaultLabels: ILabels = {
 	backLabel: 'BACK',
@@ -27,31 +12,25 @@ const defaultLabels: ILabels = {
 	skipLabel: 'SKIP',
 };
 
-export const LabelContext = createContext<ILabels>(defaultLabels);
+export const LabelContext = createContext(defaultLabels);
 
-export class Slide extends Component<ISlideProps, ISlideState> {
-	constructor(props: ISlideProps) {
-		super(props);
-		this.state = { labels: props.labels };
-	}
+export const Slide = ({
+	slides,
+	duration,
+	nextScreen,
+	labels,
+}: ISlideProps) => {
+	const [labelState, setLabelState] = useState(labels);
 
-	componentDidUpdate(prevProps: ISlideProps) {
-		const { labels } = this.props;
-		if (JSON.stringify(prevProps.labels) !== JSON.stringify(labels)) {
-			this.setState({ labels: this.props.labels });
-		}
-	}
+	useEffect(() => {
+		setLabelState(labels);
+	}, [labels]);
 
-	static Logo = SlideLogo;
-	static Header = SlideHeader;
-	static Footer = SlideFooter;
+	return (
+		<LabelContext.Provider value={{ ...labelState }}>
+			<SlideGrid {...{ slides, duration, nextScreen }} />
+		</LabelContext.Provider>
+	);
+};
 
-	render() {
-		const { slides, duration, nextScreen } = this.props;
-		return (
-			<LabelContext.Provider value={this.state.labels}>
-				<SlideGrid {...{ slides, duration, nextScreen }} />
-			</LabelContext.Provider>
-		);
-	}
-}
+export { SlideLogo, SlideHeader, SlideFooter };

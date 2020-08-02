@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { MonkeyHead, Mood } from '../../../MonkeyHead';
+import { IMonkeyHeadProps } from '../../interface';
+import { styles } from './styles';
 
-interface IMonkeyHeadProps {
-	index: number;
-	height: number;
-	onPress?: () => void;
-}
+export const MonkeyHeadSlide = ({
+	index,
+	height,
+	onPress,
+}: IMonkeyHeadProps) => {
+	const [indexState, setIndexState] = useState(index);
 
-export const MonkeyHeadSlide = (props: IMonkeyHeadProps): JSX.Element => {
-	const [index, setIndex] = useState(props.index);
-
-	useEffect(() => setIndex(props.index), [props.index]);
-
-	const { height, onPress } = props;
+	useEffect(() => setIndexState(index), [index]);
 	const monkeyHeadSize = { width: 252, height };
 
 	let mood: Mood;
-	switch (index) {
+	switch (indexState) {
 		case 0:
 			mood = Mood.sad;
 			break;
@@ -44,12 +42,3 @@ export const MonkeyHeadSlide = (props: IMonkeyHeadProps): JSX.Element => {
 		</View>
 	);
 };
-
-const styles = StyleSheet.create({
-	monkeyHeadDesign: {
-		justifyContent: 'center',
-		alignItems: 'center',
-		alignSelf: 'center',
-		position: 'absolute',
-	},
-});

@@ -8,7 +8,7 @@ interface IRenderSlideProps {
 	position: Animated.ValueXY;
 }
 
-export const RenderSlides = (props: IRenderSlideProps): JSX.Element => {
+export const RenderSlides = (props: IRenderSlideProps) => {
 	const { slides, width, height, position } = props;
 	const slidesPanel: JSX.Element[] = [];
 
