@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
 	SafeAreaView,
 	StyleSheet,
@@ -8,18 +8,15 @@ import {
 	ViewStyle,
 } from 'react-native';
 import { font } from '../../../../theme';
+import { LabelContext } from '../..';
 
 interface ISkipButtonProps {
 	onSkip: () => void;
 	style?: ViewStyle;
-	skipLabel?: string;
 }
 
-export const SkipButton = ({
-	onSkip,
-	style,
-	skipLabel = 'Skip',
-}: ISkipButtonProps): JSX.Element => {
+export const SkipButton = ({ onSkip, style }: ISkipButtonProps) => {
+	const { skipLabel } = useContext(LabelContext);
 	return (
 		<SafeAreaView {...{ style }}>
 			<View style={styles.slidePosition}>

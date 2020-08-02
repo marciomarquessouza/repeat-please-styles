@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { color, font } from '../../../../theme';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { LabelContext } from '../../';
 
 interface ISliderProps {
 	index: number;
@@ -9,9 +10,6 @@ interface ISliderProps {
 	onBack: () => void;
 	onNext: () => void;
 	onLetStart?: () => void;
-	backLabel?: string;
-	nextLabel?: string;
-	startLabel?: string;
 }
 
 export const Slider = ({
@@ -20,12 +18,10 @@ export const Slider = ({
 	onBack,
 	onNext,
 	onLetStart,
-	backLabel = 'BACK',
-	nextLabel = 'NEXT',
-	startLabel = "LET'S START",
-}: ISliderProps): JSX.Element => {
+}: ISliderProps) => {
 	const firstSlide = index === 0;
 	const lastSlide = index === slideTotal - 1;
+	const { backLabel, nextLabel, startLabel } = useContext(LabelContext);
 
 	return (
 		<View style={styles.sliderContainer}>
