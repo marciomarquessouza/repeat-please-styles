@@ -1,3 +1,4 @@
-export { SuccessIcon } from './SuccessIcon';
-export { WarningIcon } from './WarningIcon';
-export { LogoTitle } from './LogoTitle';
+import logo from './logo.png';
+import logoTitle from './logo_title.png';
+
+export { logo, logoTitle };

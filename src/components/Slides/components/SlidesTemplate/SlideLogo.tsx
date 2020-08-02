@@ -1,17 +1,15 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View, Text } from 'react-native';
 import { TitleLogo } from '../../../Logo';
+import { styles } from './styles';
 
-export const SlideLogo = () => (
+interface ISlideLogoProps {
+	greeting?: string;
+}
+
+export const SlideLogo = ({ greeting = 'Welcome to' }: ISlideLogoProps) => (
 	<View style={styles.container}>
+		<Text style={styles.titleStyle}>{greeting}</Text>
 		<TitleLogo />
 	</View>
 );
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-});
