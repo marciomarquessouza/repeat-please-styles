@@ -12,17 +12,19 @@ import { font } from '../../../../theme';
 interface ISkipButtonProps {
 	onSkip: () => void;
 	style?: ViewStyle;
+	skipLabel?: string;
 }
 
 export const SkipButton = ({
 	onSkip,
 	style,
+	skipLabel = 'Skip',
 }: ISkipButtonProps): JSX.Element => {
 	return (
 		<SafeAreaView {...{ style }}>
 			<View style={styles.slidePosition}>
 				<TouchableOpacity onPress={onSkip}>
-					<Text style={styles.textDesign}>Skip</Text>
+					<Text style={styles.textDesign}>{skipLabel}</Text>
 				</TouchableOpacity>
 			</View>
 		</SafeAreaView>

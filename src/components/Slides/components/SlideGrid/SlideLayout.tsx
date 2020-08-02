@@ -1,6 +1,9 @@
 import React from 'react';
 import { Animated, PanResponderInstance, View } from 'react-native';
-import { RenderSlides, MonkeyHeadSlide, SkipButton, Slider } from '../';
+import { RenderSlides } from '../RenderSlides';
+import { MonkeyHeadSlide } from '../MonkeyHeadSlide';
+import { SkipButton } from '../SkipButton';
+import { Slider } from '../Slider';
 import { styles } from './style';
 import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { ISlide } from './types';

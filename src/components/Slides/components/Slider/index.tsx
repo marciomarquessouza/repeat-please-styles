@@ -9,10 +9,21 @@ interface ISliderProps {
 	onBack: () => void;
 	onNext: () => void;
 	onLetStart?: () => void;
+	backLabel?: string;
+	nextLabel?: string;
+	startLabel?: string;
 }
 
-export const Slider = (props: ISliderProps): JSX.Element => {
-	const { index, slideTotal, onBack, onNext, onLetStart } = props;
+export const Slider = ({
+	index,
+	slideTotal,
+	onBack,
+	onNext,
+	onLetStart,
+	backLabel = 'BACK',
+	nextLabel = 'NEXT',
+	startLabel = "LET'S START",
+}: ISliderProps): JSX.Element => {
 	const firstSlide = index === 0;
 	const lastSlide = index === slideTotal - 1;
 
@@ -21,7 +32,7 @@ export const Slider = (props: ISliderProps): JSX.Element => {
 			<TouchableOpacity onPress={onBack} disabled={firstSlide}>
 				<Text
 					style={[styles.navigatorStyle, { opacity: firstSlide ? 0.3 : 1 }]}>
-					BACK
+					{backLabel}
 				</Text>
 			</TouchableOpacity>
 			<View style={styles.indicatorContainer}>
@@ -39,11 +50,11 @@ export const Slider = (props: ISliderProps): JSX.Element => {
 			</View>
 			{!lastSlide ? (
 				<TouchableOpacity onPress={onNext}>
-					<Text style={styles.navigatorStyle}>NEXT</Text>
+					<Text style={styles.navigatorStyle}>{nextLabel}</Text>
 				</TouchableOpacity>
 			) : (
 				<TouchableOpacity onPress={onLetStart}>
-					<Text style={styles.navigatorStyle}>LET'S START</Text>
+					<Text style={styles.navigatorStyle}>{startLabel}</Text>
 				</TouchableOpacity>
 			)}
 		</View>
