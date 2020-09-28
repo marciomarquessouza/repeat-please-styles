@@ -25,7 +25,10 @@ export const Slider = ({
 
 	return (
 		<View style={styles.sliderContainer}>
-			<TouchableOpacity onPress={onBack} disabled={firstSlide}>
+			<TouchableOpacity
+				onPress={onBack}
+				disabled={firstSlide}
+				testID="previousButton">
 				<Text
 					style={[styles.navigatorStyle, { opacity: firstSlide ? 0.3 : 1 }]}>
 					{backLabel}
@@ -45,11 +48,11 @@ export const Slider = ({
 					))}
 			</View>
 			{!lastSlide ? (
-				<TouchableOpacity onPress={onNext}>
+				<TouchableOpacity onPress={onNext} testID="nextButton">
 					<Text style={styles.navigatorStyle}>{nextLabel}</Text>
 				</TouchableOpacity>
 			) : (
-				<TouchableOpacity onPress={onLetStart}>
+				<TouchableOpacity onPress={onLetStart} testID="startButton">
 					<Text style={styles.navigatorStyle}>{startLabel}</Text>
 				</TouchableOpacity>
 			)}
