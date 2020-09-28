@@ -4,6 +4,7 @@ export interface ICircularProgressProps {
 	duration: number;
 	progress: number;
 	startAnimation: boolean;
+	chartText: string;
 }
 
 export interface ICircularProgressState {

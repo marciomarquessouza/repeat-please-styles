@@ -16,6 +16,7 @@ export class CircularProgressStage extends Component<{}, IStageState> {
 					progress={0.45}
 					duration={1000}
 					startAnimation={this.state.startAnimation}
+					chartText="Week Goal"
 				/>
 				<Button
 					onPress={() => this.setState({ startAnimation: true })}

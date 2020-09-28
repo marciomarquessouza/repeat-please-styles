@@ -68,7 +68,7 @@ export class CircularProgress extends Component<
 	};
 
 	render() {
-		const { lateralMargin, barWidth, progress } = this.props;
+		const { lateralMargin, barWidth, progress, chartText } = this.props;
 		const { background, light, white, black } = color;
 		const size = width - 2 * (lateralMargin || 65);
 		const radius = size / 2;
@@ -119,7 +119,7 @@ export class CircularProgress extends Component<
 				{this.state.showTextChart && (
 					<TextChart
 						progress={progress}
-						textChart="Week Goal"
+						textChart={chartText}
 						duration={this.props.duration}
 					/>
 				)}
