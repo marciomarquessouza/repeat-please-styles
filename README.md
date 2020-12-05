@@ -1,10 +1,15 @@
 <p align="center">
-  <img src="https://github.com/marciomarquessouza/repeat-please/blob/master/src/assets/images/logo-header.png" width="400px" />
+ <img width=640px src="https://i.imgur.com/41CMNb5.png" alt="Project logo"></a>
 </p>
 
-# REPEAT PLEASE STYLES
+<h3 align="center">Virtual Pronunciation Coach developed in React Native</h3>
 
-Styles components to be used in Repeat Please APP.
+<div align="center">
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
 
 
 ## Setup and Running
