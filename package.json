@@ -115,6 +115,7 @@
 		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
 	},
 	"dependencies": {
+		"@react-native-community/toolbar-android": "^0.1.0-rc.2",
 		"@types/react-native-vector-icons": "^6.4.5",
 		"moment": "^2.24.0",
 		"react-native-responsive-screen": "^1.4.1"
